@@ -35,7 +35,7 @@ const homeGallery = [
     <div class="container hero-inner">
       <div class="hero-content">
         <p class="hero-eyebrow">Stavební firma · Ostrava &amp; Frýdek-Místek</p>
-        <h1>Stavba a rekonstrukce,&nbsp;u&nbsp;které pořád víte, co se děje</h1>
+        <h1>Stavba a rekonstrukce, u které pořád víte, co se děje</h1>
         <p class="hero-sub">
           Postavíme nový dům nebo zrekonstruujeme ten váš — od demolice po nastěhování.
           Budete vědět, kdy bude hotovo, co to stojí a jak práce pokračuje. I když zrovna
@@ -44,13 +44,6 @@ const homeGallery = [
         <div class="hero-ctas">
           <a href="/kontakt" class="btn btn-primary">Poptat rekonstrukci</a>
           <a href="/sluzby" class="btn btn-outline">Prohlédnout služby</a>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <img src="/images/hero-realizace.webp" alt="Dokončený interiér po rekonstrukci" class="site-photo hero-img" loading="eager" decoding="async" />
-        <div class="hero-badge">
-          <span class="hero-badge-num">20+</span>
-          <span class="hero-badge-label">let praxe týmu</span>
         </div>
       </div>
     </div>
@@ -303,46 +296,81 @@ const homeGallery = [
 <style>
 /* ── Hero ─────────────────────────────────────────────── */
 .hero {
-  padding-block: 5rem 4rem;
+  position: relative;
+  min-height: calc(100svh - 68px);
+  display: grid;
+  place-items: center;
+  padding-block: 7rem;
   overflow: hidden;
+  background-image:
+    linear-gradient(rgba(10, 14, 24, 0.46), rgba(10, 14, 24, 0.46)),
+    url('/images/hero-kitchen-background.webp');
+  background-size: cover;
+  background-position: center;
 }
 
 .hero-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   align-items: center;
-  gap: 4rem;
+  justify-content: center;
+}
+
+.hero-content {
+  max-width: 860px;
+  margin-inline: auto;
+  text-align: center;
 }
 
 .hero-eyebrow {
   font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: rgba(255, 255, 255, 0.82);
   margin-bottom: 1.25rem;
 }
 
 .hero-content h1 {
+  color: white;
   margin-bottom: 1.5rem;
+  text-wrap: balance;
+  text-shadow: 0 12px 42px rgba(0, 0, 0, 0.28);
 }
 
 .hero-sub {
-  font-size: 1.0625rem;
-  line-height: 1.7;
-  color: var(--color-text-muted);
-  max-width: 52ch;
-  margin-bottom: 2.5rem;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.86);
+  max-width: 62ch;
+  margin: 0 auto 2.5rem;
+  text-shadow: 0 8px 32px rgba(0, 0, 0, 0.24);
 }
 
 .hero-ctas {
   display: flex;
+  justify-content: center;
   gap: 0.75rem;
   flex-wrap: wrap;
 }
 
-.hero-visual {
-  position: relative;
+.hero .btn-primary {
+  background-color: white;
+  border-color: white;
+  color: var(--color-primary);
+}
+
+.hero .btn-primary:hover {
+  background-color: rgba(255, 255, 255, 0.92);
+  border-color: rgba(255, 255, 255, 0.92);
+}
+
+.hero .btn-outline {
+  border-color: rgba(255, 255, 255, 0.78);
+  color: white;
+}
+
+.hero .btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.12);
 }
 
 .site-photo {
@@ -351,37 +379,6 @@ const homeGallery = [
   object-fit: cover;
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
-}
-
-.hero-img {
-  aspect-ratio: 4/3;
-  border-radius: 18px;
-}
-
-.hero-badge {
-  position: absolute;
-  bottom: -1rem;
-  left: -1.5rem;
-  background-color: var(--color-primary);
-  color: white;
-  padding: 1rem 1.5rem;
-  border-radius: var(--radius-lg);
-  display: flex;
-  flex-direction: column;
-  gap: 0.125rem;
-  box-shadow: 0 8px 24px rgba(20,33,61,0.25);
-}
-
-.hero-badge-num {
-  font-family: var(--font-heading);
-  font-size: 1.75rem;
-  font-weight: 700;
-  line-height: 1;
-}
-
-.hero-badge-label {
-  font-size: 0.75rem;
-  opacity: 0.75;
 }
 
 /* ── Kdo jsme ─────────────────────────────────────────── */
@@ -802,17 +799,6 @@ const homeGallery = [
 }
 
 @media (max-width: 900px) {
-  .hero-inner {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  .hero-badge {
-    left: auto;
-    right: 1rem;
-    bottom: -0.75rem;
-  }
-
   .about-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
@@ -829,7 +815,12 @@ const homeGallery = [
 
 @media (max-width: 600px) {
   .hero {
-    padding-block: 3rem 3rem;
+    min-height: calc(100svh - 68px);
+    padding-block: 5rem;
+  }
+
+  .hero-sub {
+    font-size: 1rem;
   }
 
   .section-top {
