@@ -31,6 +31,8 @@
   /* Barvy */
   --color-primary:          #14213D;
   --color-primary-hover:    #1a2d52;
+  --color-secondary:        #1e8fd1;
+  --color-secondary-hover:  #1a7dbf;
   --color-accent:           #1E3A8A;
   --color-baby-blue:        #BFD7FF;
   --color-bg:               #FAFAFA;
