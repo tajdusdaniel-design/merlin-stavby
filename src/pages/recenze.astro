@@ -2,6 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+
+const reviews = [
+  { initials: 'PH', name: 'Petr H.', place: 'Ostrava', text: 'Rekonstrukci bytu 3+1 zvládli přesně v termínu, na kterém jsme se domluvili. Co mě nejvíc překvapilo — celou dobu jsem věděl, v jaké fázi jsme, protože nám pravidelně posílali fotky. Žádné hádání, kdy přijdou.' },
+  { initials: 'LT', name: 'Lucie a Tomáš M.', place: 'Frýdek-Místek', text: 'Hledali jsme firmu na celou rekonstrukci domu a báli jsme se, že to bude boj. Nakonec úplný opak. Domluva platila, cena se nezměnila a když jsme něco potřebovali doladit i po předání, vyřešili to bez řečí.' },
+  { initials: 'JK', name: 'Jan K.', place: 'Brušperk', text: 'Stavěli nám hrubou stavbu rodinného domu. Pracovalo se každý den, nemuseli jsme nikoho honit. Konečně firma, na kterou je spoleh.' },
+];
 ---
 
 <Layout
@@ -10,70 +16,48 @@ import Footer from '../components/Footer.astro';
 >
   <Nav slot="header" />
 
-  <section class="section">
+  <section class="page-intro">
+    <div class="container page-intro__grid">
+      <div>
+        <nav class="breadcrumb" aria-label="Drobečková navigace">
+          <a href="/">Domů</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Recenze</span>
+        </nav>
+        <p class="page-kicker">Reference</p>
+        <h1>Co o nás <span>říkají zákazníci</span></h1>
+      </div>
+      <p class="page-intro__lead">
+        Recenze teprve sbíráme. Struktura je připravená tak, aby sem později šly doplnit ověřené reference bez změny celé stránky.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--large reviews-section">
     <div class="container">
-      <nav class="breadcrumb" aria-label="Drobečková navigace">
-        <a href="/">Domů</a>
-        <span aria-hidden="true">/</span>
-        <span aria-current="page">Recenze</span>
-      </nav>
-
-      <div class="section__header">
-        <h1>Recenze</h1>
-        <p class="section__lead">
-          Recenze teprve sbíráme. Jakmile budeme mít první ověřená hodnocení od zákazníků,
-          najdete je tady.
-        </p>
-      </div>
-
       <div class="testimonials-grid">
-        <div class="testimonial-card" data-placeholder="true">
-          <div class="testimonial-quote" aria-hidden="true">&ldquo;</div>
-          <p class="testimonial-text">
-            Rekonstrukci bytu 3+1 zvládli přesně v termínu, na kterém jsme se domluvili.
-            Co mě nejvíc překvapilo — celou dobu jsem věděl, v jaké fázi jsme, protože nám
-            pravidelně posílali fotky. Žádné hádání, kdy přijdou.
-          </p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar" aria-hidden="true">PH</div>
-            <div>
-              <p class="testimonial-name">Petr H.</p>
-              <p class="testimonial-role">Ostrava</p>
+        {reviews.map((review) => (
+          <article class="testimonial-card" data-placeholder="true">
+            <div class="testimonial-quote" aria-hidden="true">&ldquo;</div>
+            <p class="testimonial-text">{review.text}</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">{review.initials}</div>
+              <div>
+                <p class="testimonial-name">{review.name}</p>
+                <p class="testimonial-role">{review.place}</p>
+              </div>
             </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card" data-placeholder="true">
-          <div class="testimonial-quote" aria-hidden="true">&ldquo;</div>
-          <p class="testimonial-text">
-            Hledali jsme firmu na celou rekonstrukci domu a báli jsme se, že to bude boj.
-            Nakonec úplný opak. Domluva platila, cena se nezměnila a když jsme něco potřebovali
-            doladit i po předání, vyřešili to bez řečí.
-          </p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar" aria-hidden="true">LT</div>
-            <div>
-              <p class="testimonial-name">Lucie a Tomáš M.</p>
-              <p class="testimonial-role">Frýdek-Místek</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card" data-placeholder="true">
-          <div class="testimonial-quote" aria-hidden="true">&ldquo;</div>
-          <p class="testimonial-text">
-            Stavěli nám hrubou stavbu rodinného domu. Pracovalo se každý den, nemuseli jsme
-            nikoho honit. Konečně firma, na kterou je spoleh.
-          </p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar" aria-hidden="true">JK</div>
-            <div>
-              <p class="testimonial-name">Jan K.</p>
-              <p class="testimonial-role">Brušperk</p>
-            </div>
-          </div>
-        </div>
+          </article>
+        ))}
       </div>
+    </div>
+  </section>
+
+  <section class="section section--compact proof-strip">
+    <div class="container proof-strip-inner">
+      <span>20 let zkušeností</span>
+      <span>Moravskoslezský kraj</span>
+      <span>Fotky z postupu</span>
     </div>
   </section>
 
@@ -81,6 +65,10 @@ import Footer from '../components/Footer.astro';
 </Layout>
 
 <style>
+.reviews-section {
+  background: linear-gradient(180deg, var(--color-surface) 0%, #fff 100%);
+}
+
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -90,26 +78,27 @@ import Footer from '../components/Footer.astro';
 .testimonial-card {
   background-color: var(--color-testimonial-bg);
   color: var(--color-testimonial-text);
-  border-radius: var(--radius-lg);
-  padding: 2rem 1.75rem;
+  border-radius: 18px;
+  padding: 2.25rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  min-height: 340px;
 }
 
 .testimonial-quote {
   font-family: var(--font-heading);
   font-size: 3rem;
   font-weight: 700;
-  color: var(--color-baby-blue);
+  color: var(--color-accent);
   line-height: 1;
-  opacity: 0.6;
+  opacity: 0.9;
 }
 
 .testimonial-text {
-  color: rgba(255,255,255,0.85);
-  font-size: 0.9375rem;
-  line-height: 1.65;
+  color: rgba(255,255,255,0.86);
+  font-size: 0.95rem;
+  line-height: 1.7;
   flex: 1;
 }
 
@@ -122,31 +111,55 @@ import Footer from '../components/Footer.astro';
 }
 
 .testimonial-avatar {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  background-color: rgba(255,255,255,0.15);
+  background-color: rgba(30,157,224,0.22);
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   flex-shrink: 0;
 }
 
 .testimonial-name {
-  font-weight: 600;
-  font-size: 0.9375rem;
+  font-weight: 700;
+  font-size: 0.95rem;
   color: white;
 }
 
 .testimonial-role {
-  font-size: 0.8125rem;
-  color: rgba(255,255,255,0.55);
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.58);
+}
+
+.proof-strip {
+  background-color: var(--color-primary);
+}
+
+.proof-strip-inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.proof-strip span {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 14px;
 }
 
 @media (max-width: 900px) {
-  .testimonials-grid {
+  .testimonials-grid,
+  .proof-strip-inner {
     grid-template-columns: 1fr;
   }
 }

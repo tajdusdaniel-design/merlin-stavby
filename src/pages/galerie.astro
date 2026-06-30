@@ -22,36 +22,38 @@ const galleryImages = [
 >
   <Nav slot="header" />
 
-  <section class="section">
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Drobečková navigace">
-        <a href="/">Domů</a>
-        <span aria-hidden="true">/</span>
-        <span aria-current="page">Galerie</span>
-      </nav>
-
-      <div class="section__header">
-        <h1>Naše práce</h1>
-        <p class="section__lead">
-          Výběr z dokončených i rozpracovaných zakázek. Část fotek pravidelně přidáváme
-          i na <a href="https://www.instagram.com/merlinstavby" target="_blank" rel="noopener" class="inline-link">Instagram</a>
-          a <a href="https://www.facebook.com/merlinstavbysro" target="_blank" rel="noopener" class="inline-link">Facebook</a>.
-        </p>
+  <section class="page-intro">
+    <div class="container page-intro__grid">
+      <div>
+        <nav class="breadcrumb" aria-label="Drobečková navigace">
+          <a href="/">Domů</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Galerie</span>
+        </nav>
+        <p class="page-kicker">Realizace</p>
+        <h1>Jak naše práce <span>vypadá v praxi</span></h1>
       </div>
+      <p class="page-intro__lead">
+        Výběr z dokončených i rozpracovaných zakázek. Část fotek průběžně přidáváme na Instagram a Facebook, aby bylo vidět, že se na stavbě opravdu pracuje.
+      </p>
+    </div>
+  </section>
 
+  <section class="section section--large">
+    <div class="container">
       <div class="gallery-grid">
-        {galleryImages.map((image) => (
-          <img src={image.src} alt={image.alt} class="gallery-item" loading="eager" decoding="async" />
+        {galleryImages.map((image, index) => (
+          <img src={image.src} alt={image.alt} class:list={['gallery-item', { 'gallery-item--wide': index === 0 || index === 5 }]} loading="eager" decoding="async" />
         ))}
       </div>
     </div>
   </section>
 
-  <section class="section section--surface">
-    <div class="container cta-block">
-      <h2>Chcete vidět konkrétní typ práce?</h2>
-      <p>Napište nám, co vás zajímá — pošleme vám fotky přímo ze zakázek.</p>
-      <a href="/kontakt" class="btn btn-primary" style="margin-top:1.5rem;">Kontaktovat nás</a>
+  <section class="section section--compact gallery-cta-section">
+    <div class="container cta-card">
+      <p class="page-kicker">Chcete vidět konkrétní typ práce?</p>
+      <h2>Napište nám, co vás zajímá. Pošleme fotky přímo ze zakázek.</h2>
+      <a href="/kontakt" class="btn btn-primary">Kontaktovat nás</a>
     </div>
   </section>
 
@@ -71,37 +73,41 @@ const galleryImages = [
   object-fit: cover;
   border: 1px solid var(--color-border);
   border-radius: 18px;
-  cursor: pointer;
   transition: opacity var(--transition);
 }
 
 .gallery-item:hover {
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
-.inline-link {
-  color: var(--color-accent);
-  font-weight: 500;
-  text-decoration: underline;
-  text-underline-offset: 2px;
+.gallery-item--wide {
+  grid-column: span 2;
 }
 
-.cta-block {
-  max-width: 600px;
-  margin-inline: auto;
+.gallery-cta-section {
+  background-color: var(--color-surface);
+}
+
+.cta-card {
   text-align: center;
 }
 
-.cta-block h2 { margin-bottom: 0.75rem; }
-.cta-block p { font-size: 1.0625rem; }
+.cta-card h2 {
+  max-width: 720px;
+  margin: 0 auto 1.75rem;
+}
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .gallery-item--wide {
+    grid-column: span 1;
+  }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 520px) {
   .gallery-grid {
     grid-template-columns: 1fr;
   }

@@ -12,7 +12,7 @@ const services = [
   { number: '06', title: 'Pergoly a dlažby', text: 'Venkovní úpravy kolem domu, které mají být hotové čistě, pevně a bez dlouhého čekání.', href: '/sluzby/dilci-stavebni-cinnost' },
 ];
 
-const trustItems = ['20+ let praxe', 'MSK kraj', 'Jeden kontakt', 'Fotky z postupu', 'IČ veřejně dohledatelné', 'Reálné realizace'];
+const heroProof = ['20 let zkušeností', 'Moravskoslezský kraj', 'Fotky z postupu'];
 
 const homeGallery = [
   { src: '/images/gallery-kuchyn-svetla.webp', alt: 'Světlá kuchyň po rekonstrukci' },
@@ -45,12 +45,20 @@ const homeGallery = [
           <a href="/kontakt" class="btn btn-primary">Poptat rekonstrukci</a>
           <a href="/sluzby" class="btn btn-outline">Prohlédnout služby</a>
         </div>
+        <div class="hero-proof" aria-label="Hlavní důvody důvěry">
+          <p>Opřené o</p>
+          <div class="hero-proof-list">
+            {heroProof.map((item) => (
+              <span>{item}</span>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ── KDO JSME ──────────────────────────────────────── -->
-  <section class="section">
+  <section class="section section--large">
     <div class="container about-grid">
       <div class="about-images">
         <img src="/images/about-stavba.webp" alt="Tesařská práce u domu" class="site-photo about-img about-img--big" loading="lazy" decoding="async" />
@@ -84,7 +92,7 @@ const homeGallery = [
   </section>
 
   <!-- ── SLUŽBY ────────────────────────────────────────── -->
-  <section class="section section--surface services-section">
+  <section class="section section--large section--surface services-section">
     <div class="container">
       <div class="section-top">
         <div>
@@ -109,15 +117,6 @@ const homeGallery = [
         ))}
       </div>
 
-      <div class="trust-row">
-        <p>Opřené o</p>
-        <div class="trust-grid">
-          {trustItems.map((item) => (
-            <div class="trust-pill">{item}</div>
-          ))}
-        </div>
-      </div>
-
       <div class="mission-panel">
         <img src="/images/service-novostavby.webp" alt="Dřevěná pergola a venkovní stavební práce" class="mission-image" loading="eager" decoding="async" />
         <div class="mission-card">
@@ -133,7 +132,7 @@ const homeGallery = [
   </section>
 
   <!-- ── GALERIE TEASER ────────────────────────────────── -->
-  <section class="section">
+  <section class="section section--large">
     <div class="container">
       <div class="section__header">
         <h2>Jak naše práce vypadá v praxi</h2>
@@ -154,7 +153,7 @@ const homeGallery = [
   </section>
 
   <!-- ── PROČ MERLIN ───────────────────────────────────── -->
-  <section class="section section--surface">
+  <section class="section section--medium section--surface">
     <div class="container">
       <div class="section__header text-center">
         <h2>Co tím získáte</h2>
@@ -208,60 +207,39 @@ const homeGallery = [
   </section>
 
   <!-- ── RECENZE TEASER ────────────────────────────────── -->
-  <section class="section">
+  <section class="section section--medium reviews-section">
     <div class="container">
       <div class="section__header">
         <h2>Co o nás říkají zákazníci</h2>
         <p class="section__lead">Reference od lidí, pro které jsme stavěli nebo rekonstruovali.</p>
       </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card" data-placeholder="true">
-          <div class="testimonial-quote" aria-hidden="true">&ldquo;</div>
-          <p class="testimonial-text">
-            Rekonstrukci bytu 3+1 zvládli přesně v termínu, na kterém jsme se domluvili.
-            Co mě nejvíc překvapilo — celou dobu jsem věděl, v jaké fázi jsme, protože nám
-            pravidelně posílali fotky. Žádné hádání, kdy přijdou.
-          </p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar" aria-hidden="true">PH</div>
-            <div>
-              <p class="testimonial-name">Petr H.</p>
-              <p class="testimonial-role">Ostrava</p>
-            </div>
-          </div>
-        </div>
+    </div>
 
-        <div class="testimonial-card" data-placeholder="true">
-          <div class="testimonial-quote" aria-hidden="true">&ldquo;</div>
-          <p class="testimonial-text">
-            Hledali jsme firmu na celou rekonstrukci domu a báli jsme se, že to bude boj.
-            Nakonec úplný opak. Domluva platila, cena se nezměnila a když jsme něco potřebovali
-            doladit i po předání, vyřešili to bez řečí.
-          </p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar" aria-hidden="true">LT</div>
-            <div>
-              <p class="testimonial-name">Lucie a Tomáš M.</p>
-              <p class="testimonial-role">Frýdek-Místek</p>
+    <div class="reviews-carousel" role="region" aria-label="Reference zákazníků">
+      <div class="reviews-carousel__track">
+        {[
+          { initials: 'PH', name: 'Petr H.', role: 'Ostrava', text: 'Rekonstrukci bytu 3+1 zvládli přesně v termínu, na kterém jsme se domluvili. Co mě nejvíc překvapilo — celou dobu jsem věděl, v jaké fázi jsme, protože nám pravidelně posílali fotky. Žádné hádání, kdy přijdou.' },
+          { initials: 'LT', name: 'Lucie a Tomáš M.', role: 'Frýdek-Místek', text: 'Hledali jsme firmu na celou rekonstrukci domu a báli jsme se, že to bude boj. Nakonec úplný opak. Domluva platila, cena se nezměnila a když jsme něco potřebovali doladit i po předání, vyřešili to bez řečí.' },
+          { initials: 'JK', name: 'Jan K.', role: 'Brušperk', text: 'Stavěli nám hrubou stavbu rodinného domu. Pracovalo se každý den, nemuseli jsme nikoho honit. Konečně firma, na kterou je spoleh.' },
+          { initials: 'MN', name: 'Miroslava N.', role: 'Opava', text: 'Měla jsem špatné zkušenosti s předchozí firmou, takže jsem šla do toho s obavami. Tady bylo vše jinak — přišli v domluvený den, průběžně informovali a výsledek předčil očekávání.' },
+          { initials: 'RV', name: 'Radek V.', role: 'Ostrava-Poruba', text: 'Pergola i dlažba na terase hotová v jednom týdnu. Přesně jak jsme se domluvili, bez táhání a výmluv. Cena odpovídala nabídce.' },
+        ].flatMap(r => [r, r]).map(r => (
+          <div class="reviews-carousel__card" data-placeholder="true">
+            <div class="reviews-carousel__quote" aria-hidden="true">&ldquo;</div>
+            <p class="reviews-carousel__text">{r.text}</p>
+            <div class="reviews-carousel__author">
+              <div class="reviews-carousel__avatar" aria-hidden="true">{r.initials}</div>
+              <div>
+                <p class="reviews-carousel__name">{r.name}</p>
+                <p class="reviews-carousel__role">{r.role}</p>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="testimonial-card" data-placeholder="true">
-          <div class="testimonial-quote" aria-hidden="true">&ldquo;</div>
-          <p class="testimonial-text">
-            Stavěli nám hrubou stavbu rodinného domu. Pracovalo se každý den, nemuseli jsme
-            nikoho honit. Konečně firma, na kterou je spoleh.
-          </p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar" aria-hidden="true">JK</div>
-            <div>
-              <p class="testimonial-name">Jan K.</p>
-              <p class="testimonial-role">Brušperk</p>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
+    </div>
+
+    <div class="container">
       <div class="testimonials-cta">
         <a href="/recenze" class="btn btn-outline">Zobrazit reference</a>
       </div>
@@ -269,7 +247,7 @@ const homeGallery = [
   </section>
 
   <!-- ── FINÁLNÍ CTA ───────────────────────────────────── -->
-  <section class="section cta-section">
+  <section class="section section--compact cta-section">
     <div class="container">
       <div class="cta-block">
         <h2>Plánujete stavbu nebo rekonstrukci?</h2>
@@ -297,13 +275,13 @@ const homeGallery = [
 /* ── Hero ─────────────────────────────────────────────── */
 .hero {
   position: relative;
-  min-height: calc(100svh - 68px);
+  min-height: clamp(640px, 86svh, 760px);
   display: grid;
   place-items: center;
-  padding-block: 7rem;
+  padding-block: 5rem;
   overflow: hidden;
   background-image:
-    linear-gradient(rgba(10, 14, 24, 0.46), rgba(10, 14, 24, 0.46)),
+    linear-gradient(rgba(7, 20, 38, 0.42), rgba(7, 20, 38, 0.42)),
     url('/images/hero-kitchen-background.webp');
   background-size: cover;
   background-position: center;
@@ -354,23 +332,58 @@ const homeGallery = [
 }
 
 .hero .btn-primary {
-  background-color: white;
-  border-color: white;
-  color: var(--color-primary);
-}
-
-.hero .btn-primary:hover {
-  background-color: rgba(255, 255, 255, 0.92);
-  border-color: rgba(255, 255, 255, 0.92);
-}
-
-.hero .btn-outline {
-  border-color: rgba(255, 255, 255, 0.78);
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
   color: white;
 }
 
+.hero .btn-primary:hover {
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}
+
+.hero .btn-outline {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.34);
+  color: white;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
 .hero .btn-outline:hover {
-  background-color: rgba(255, 255, 255, 0.12);
+  background-color: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.48);
+}
+
+.hero-proof {
+  margin-top: 2rem;
+}
+
+.hero-proof > p {
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.hero-proof-list {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.hero-proof-list span {
+  padding: 0.7rem 1rem;
+  color: white;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .site-photo {
@@ -444,7 +457,7 @@ const homeGallery = [
 
 /* ── Služby grid podle reference ─────────────────────── */
 .services-section {
-  background-color: #f3f7fb;
+  background-color: var(--color-surface);
 }
 
 .section-top {
@@ -470,7 +483,7 @@ const homeGallery = [
 
 .section-top h2 span,
 .mission-card h3 span {
-  color: #1e8fd1;
+  color: var(--color-accent);
 }
 
 .section-link,
@@ -489,7 +502,7 @@ const homeGallery = [
 .mission-link:hover,
 .service-link:hover {
   gap: 0.625rem;
-  color: #1e8fd1;
+  color: var(--color-accent);
 }
 
 .services-grid {
@@ -512,7 +525,7 @@ const homeGallery = [
   font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 0.02em;
-  color: #1e8fd1;
+  color: var(--color-accent);
   margin-bottom: 0.8rem;
 }
 
@@ -572,7 +585,7 @@ const homeGallery = [
   min-height: 430px;
   border-radius: 22px;
   overflow: hidden;
-  background-image: linear-gradient(90deg, rgba(20,33,61,0.08), rgba(20,33,61,0.22)), url('/images/service-novostavby.webp');
+  background-image: linear-gradient(90deg, rgba(7,20,38,0.10), rgba(7,20,38,0.32)), url('/images/service-novostavby.webp');
   background-size: cover;
   background-position: center;
 }
@@ -664,14 +677,69 @@ const homeGallery = [
   font-size: 0.9375rem;
 }
 
-/* ── Recenze ──────────────────────────────────────────── */
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+/* ── Recenze carousel ─────────────────────────────────── */
+.reviews-carousel {
+  --c-edge: max(4vw, calc((100vw - 1200px) / 2));
+  width: 100%;
+  overflow: hidden;
+  touch-action: pan-y;
+  cursor: grab;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent var(--c-edge),
+    #000 calc(var(--c-edge) + 160px),
+    #000 calc(100% - var(--c-edge) - 160px),
+    transparent calc(100% - var(--c-edge))
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent var(--c-edge),
+    #000 calc(var(--c-edge) + 160px),
+    #000 calc(100% - var(--c-edge) - 160px),
+    transparent calc(100% - var(--c-edge))
+  );
+  margin-top: 2rem;
+}
+@media (max-width: 767px) {
+  .reviews-carousel {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      rgba(0,0,0,0.25) 3vw,
+      rgba(0,0,0,0.75) calc(3vw + 40px),
+      #000 calc(3vw + 80px),
+      #000 calc(100% - 3vw - 80px),
+      rgba(0,0,0,0.75) calc(100% - 3vw - 40px),
+      rgba(0,0,0,0.25) calc(100% - 3vw),
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      rgba(0,0,0,0.25) 3vw,
+      rgba(0,0,0,0.75) calc(3vw + 40px),
+      #000 calc(3vw + 80px),
+      #000 calc(100% - 3vw - 80px),
+      rgba(0,0,0,0.75) calc(100% - 3vw - 40px),
+      rgba(0,0,0,0.25) calc(100% - 3vw),
+      transparent 100%
+    );
+  }
+}
+.reviews-carousel.is-grabbing { cursor: grabbing; }
+
+.reviews-carousel__track {
+  display: flex;
   gap: 1rem;
+  width: max-content;
+  padding: 6px 0 12px;
+  user-select: none;
+  will-change: transform;
 }
 
-.testimonial-card {
+.reviews-carousel__card {
+  flex-shrink: 0;
+  width: 360px;
   background-color: var(--color-testimonial-bg);
   color: var(--color-testimonial-text);
   border-radius: var(--radius-lg);
@@ -680,8 +748,11 @@ const homeGallery = [
   flex-direction: column;
   gap: 1.25rem;
 }
+@media (max-width: 600px) {
+  .reviews-carousel__card { width: 300px; }
+}
 
-.testimonial-quote {
+.reviews-carousel__quote {
   font-family: var(--font-heading);
   font-size: 3rem;
   font-weight: 700;
@@ -690,14 +761,14 @@ const homeGallery = [
   opacity: 0.6;
 }
 
-.testimonial-text {
+.reviews-carousel__text {
   color: rgba(255,255,255,0.85);
   font-size: 0.9375rem;
   line-height: 1.65;
   flex: 1;
 }
 
-.testimonial-author {
+.reviews-carousel__author {
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -705,7 +776,7 @@ const homeGallery = [
   border-top: 1px solid rgba(255,255,255,0.12);
 }
 
-.testimonial-avatar {
+.reviews-carousel__avatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -718,13 +789,13 @@ const homeGallery = [
   flex-shrink: 0;
 }
 
-.testimonial-name {
+.reviews-carousel__name {
   font-weight: 600;
   font-size: 0.9375rem;
   color: white;
 }
 
-.testimonial-role {
+.reviews-carousel__role {
   font-size: 0.8125rem;
   color: rgba(255,255,255,0.55);
 }
@@ -792,10 +863,6 @@ const homeGallery = [
     gap: 1.5rem;
   }
 
-  .testimonials-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
 }
 
 @media (max-width: 900px) {
@@ -815,8 +882,8 @@ const homeGallery = [
 
 @media (max-width: 600px) {
   .hero {
-    min-height: calc(100svh - 68px);
-    padding-block: 5rem;
+    min-height: 620px;
+    padding-block: 4rem;
   }
 
   .hero-sub {
@@ -855,3 +922,96 @@ const homeGallery = [
   }
 }
 </style>
+
+<script>
+  (() => {
+    const carousel = document.querySelector<HTMLElement>('.reviews-carousel');
+    const track = carousel?.querySelector<HTMLElement>('.reviews-carousel__track');
+    if (!carousel || !track) return;
+
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const AUTO = 0.04;
+
+    let half = track.scrollWidth / 2;
+    let x = 0;
+    let vel = 0;
+    let hover = false;
+    let dragging = false;
+    let pointerId: number | null = null;
+    let lastClientX = 0;
+    let lastMoveT = 0;
+    let moved = 0;
+    let lastT = 0;
+
+    const recompute = () => { const h = track.scrollWidth / 2; if (h > 0) half = h; };
+    recompute();
+    window.addEventListener('load', recompute);
+    window.addEventListener('resize', recompute);
+    if ('ResizeObserver' in window) new ResizeObserver(recompute).observe(track);
+
+    const norm = () => { if (half <= 0) return; x %= half; if (x < 0) x += half; };
+    const apply = () => { track.style.transform = `translate3d(${-x}px,0,0)`; };
+
+    const frame = (t: number) => {
+      const dt = Math.min(t - lastT, 50);
+      lastT = t;
+      if (!dragging) {
+        if (Math.abs(vel) > 0.003) {
+          x += vel * dt;
+          vel *= Math.pow(0.94, dt / 16);
+        } else {
+          vel = 0;
+          if (!reduce && !hover) x += AUTO * dt;
+        }
+      }
+      norm();
+      apply();
+      requestAnimationFrame(frame);
+    };
+    requestAnimationFrame((t) => { lastT = t; frame(t); });
+
+    carousel.addEventListener('mouseenter', () => { hover = true; });
+    carousel.addEventListener('mouseleave', () => { hover = false; });
+    carousel.addEventListener('dragstart', (e) => e.preventDefault());
+
+    carousel.addEventListener('pointerdown', (e) => {
+      dragging = true;
+      vel = 0;
+      moved = 0;
+      pointerId = e.pointerId;
+      lastClientX = e.clientX;
+      lastMoveT = e.timeStamp;
+      carousel.classList.add('is-grabbing');
+      try { carousel.setPointerCapture(e.pointerId); } catch {}
+    });
+
+    carousel.addEventListener('pointermove', (e) => {
+      if (!dragging || e.pointerId !== pointerId) return;
+      const dx = e.clientX - lastClientX;
+      const dt = e.timeStamp - lastMoveT || 16;
+      lastClientX = e.clientX;
+      lastMoveT = e.timeStamp;
+      moved += Math.abs(dx);
+      x -= dx;
+      vel = vel * 0.7 + (-dx / dt) * 0.3;
+      norm();
+      apply();
+      if (moved > 8 && e.cancelable) e.preventDefault();
+    });
+
+    const end = (e: PointerEvent) => {
+      if (!dragging || e.pointerId !== pointerId) return;
+      dragging = false;
+      pointerId = null;
+      vel = Math.max(-2.5, Math.min(2.5, vel));
+      carousel.classList.remove('is-grabbing');
+      try { carousel.releasePointerCapture(e.pointerId); } catch {}
+    };
+    carousel.addEventListener('pointerup', end);
+    carousel.addEventListener('pointercancel', end);
+
+    carousel.addEventListener('click', (e) => {
+      if (moved > 8) { e.preventDefault(); e.stopPropagation(); }
+    }, true);
+  })();
+</script>

@@ -29,20 +29,21 @@
 /* ─── Design Tokens ─────────────────────────────────────── */
 :root {
   /* Barvy */
-  --color-primary:          #14213D;
-  --color-primary-hover:    #1a2d52;
-  --color-accent:           #1E3A8A;
-  --color-baby-blue:        #BFD7FF;
+  --color-primary:          #071426;
+  --color-primary-hover:    #0D1E36;
+  --color-accent:           #1E9DE0;
+  --color-accent-hover:     #178DCA;
+  --color-baby-blue:        #D8ECFF;
   --color-bg:               #FAFAFA;
-  --color-surface:          #F4F6FB;
-  --color-border:           #E2E5EC;
+  --color-surface:          #F3F7FB;
+  --color-border:           #DDE6EF;
 
   --color-text-primary:     #0A0A0A;
   --color-text-secondary:   rgba(10,10,10,0.9);
   --color-text-muted:       rgba(10,10,10,0.8);
   --color-text-inverse:     #FFFFFF;
 
-  --color-testimonial-bg:   #1E3A8A;
+  --color-testimonial-bg:   #071426;
   --color-testimonial-text: #FFFFFF;
 
   --color-success:          #16A34A;
@@ -234,7 +235,19 @@ p {
 
 /* ─── Section spacing ─────────────────────────────────────── */
 .section {
-  padding-block: var(--space-12);
+  padding-block: 5rem;
+}
+
+.section--large {
+  padding-block: 6.5rem;
+}
+
+.section--medium {
+  padding-block: 4.75rem;
+}
+
+.section--compact {
+  padding-block: 3.75rem;
 }
 
 .section--surface {
@@ -278,5 +291,66 @@ html {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* ─── Shared reference-led page sections ─────────────────── */
+.page-intro {
+  background-color: var(--color-surface);
+  padding-block: 5rem 4.25rem;
+}
+
+.page-intro__grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: end;
+  gap: 4rem;
+}
+
+.page-kicker {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 0.85rem;
+}
+
+.page-intro h1 span,
+.section-accent {
+  color: var(--color-accent);
+}
+
+.page-intro__lead {
+  font-size: 1.08rem;
+  line-height: 1.75;
+  max-width: 58ch;
+}
+
+.arrow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  transition: gap var(--transition), color var(--transition);
+}
+
+.arrow-link:hover {
+  gap: 0.65rem;
+  color: var(--color-accent);
+}
+
+@media (max-width: 800px) {
+  .page-intro__grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .section,
+  .section--large,
+  .section--medium {
+    padding-block: 4rem;
   }
 }
