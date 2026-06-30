@@ -2,6 +2,26 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+
+const services = [
+  { number: '01', title: 'Novostavby', text: 'Dům na klíč, hrubá stavba, základová deska i navázání na rozpracovanou část. Koordinaci řešíme za vás.', href: '/sluzby/novostavby' },
+  { number: '02', title: 'Rekonstrukce', text: 'Byt, dům, jádro, podlahy, sádrokartony i povrchy. Od bourání po předání hotového prostoru.', href: '/sluzby/rekonstrukce' },
+  { number: '03', title: 'Dílčí práce', text: 'Pergoly, přístřešky, dlažby a konkrétní stavební práce bez zbytečně velké zakázky.', href: '/sluzby/dilci-stavebni-cinnost' },
+  { number: '04', title: 'Sádrokartony', text: 'Příčky, podhledy a konstrukce, které navážou na zbytek stavby a budou připravené na finální povrchy.', href: '/sluzby/rekonstrukce' },
+  { number: '05', title: 'Podlahy', text: 'Příprava podkladu, pokládka a dokončení podlah tak, aby výsledek seděl technicky i vizuálně.', href: '/sluzby/rekonstrukce' },
+  { number: '06', title: 'Pergoly a dlažby', text: 'Venkovní úpravy kolem domu, které mají být hotové čistě, pevně a bez dlouhého čekání.', href: '/sluzby/dilci-stavebni-cinnost' },
+];
+
+const trustItems = ['20+ let praxe', 'MSK kraj', 'Jeden kontakt', 'Fotky z postupu', 'IČ veřejně dohledatelné', 'Reálné realizace'];
+
+const homeGallery = [
+  { src: '/images/gallery-kuchyn-svetla.webp', alt: 'Světlá kuchyň po rekonstrukci' },
+  { src: '/images/gallery-kuchyn-bila.webp', alt: 'Bílá kuchyňská linka po dokončení' },
+  { src: '/images/gallery-koupelna-sprcha.webp', alt: 'Koupelna se sprchovým koutem' },
+  { src: '/images/gallery-koupelna-stresni.webp', alt: 'Rekonstrukce koupelny v podkroví' },
+  { src: '/images/gallery-chodba.webp', alt: 'Dokončená chodba v interiéru' },
+  { src: '/images/gallery-kuchyn-seda.webp', alt: 'Šedá kuchyň po rekonstrukci' },
+];
 ---
 
 <Layout
@@ -27,9 +47,7 @@ import Footer from '../components/Footer.astro';
         </div>
       </div>
       <div class="hero-visual">
-        <div class="img-placeholder hero-img" aria-hidden="true">
-          <span>Foto realizace</span>
-        </div>
+        <img src="/images/hero-realizace.webp" alt="Dokončený interiér po rekonstrukci" class="site-photo hero-img" loading="eager" decoding="async" />
         <div class="hero-badge">
           <span class="hero-badge-num">20+</span>
           <span class="hero-badge-label">let praxe týmu</span>
@@ -42,12 +60,8 @@ import Footer from '../components/Footer.astro';
   <section class="section">
     <div class="container about-grid">
       <div class="about-images">
-        <div class="img-placeholder about-img about-img--big" aria-hidden="true">
-          <span>Fotka ze stavby</span>
-        </div>
-        <div class="img-placeholder about-img about-img--small" aria-hidden="true">
-          <span>Detail práce</span>
-        </div>
+        <img src="/images/about-stavba.webp" alt="Tesařská práce u domu" class="site-photo about-img about-img--big" loading="lazy" decoding="async" />
+        <img src="/images/about-detail.webp" alt="Detail dokončené koupelny" class="site-photo about-img about-img--small" loading="lazy" decoding="async" />
       </div>
       <div class="about-content">
         <h2>Kdo jsme</h2>
@@ -77,58 +91,50 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <!-- ── SLUŽBY ────────────────────────────────────────── -->
-  <section class="section section--surface">
+  <section class="section section--surface services-section">
     <div class="container">
-      <div class="section__header">
-        <h2>Co u nás zařídíte</h2>
+      <div class="section-top">
+        <div>
+          <p class="section-kicker">Naše služby</p>
+          <h2>Co u nás <span>zařídíte</span></h2>
+        </div>
+        <a href="/sluzby" class="section-link">Prohlédnout služby
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
+
       <div class="services-grid">
-        <div class="service-card">
-          <div class="service-number">01</div>
-          <h3>Novostavby</h3>
-          <p>
-            Postavíme váš dům na klíč — od základové desky přes hrubou stavbu, střechu a
-            sádrokartonové konstrukce až po podlahy a dokončovací práce. Máte vlastní řemeslníky
-            na část stavby? Navážeme přesně tam, kde nás potřebujete. Jeden dodavatel od začátku
-            do konce znamená, že nekoordinujete pět part najednou — staráme se o to my.
-          </p>
-          <a href="/sluzby/novostavby" class="service-link">
-            Zjistit více
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
+        {services.map((service) => (
+          <article class="service-card">
+            <div class="service-number">{service.number}</div>
+            <h3>{service.title}</h3>
+            <p>{service.text}</p>
+            <a href={service.href} class="service-link">Zjistit více
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+        ))}
+      </div>
 
-        <div class="service-card">
-          <div class="service-number">02</div>
-          <h3>Rekonstrukce</h3>
-          <p>
-            Zrekonstruujeme byt i dům, od první rány kladivem po poslední nátěr. Vybouráme,
-            odvezeme suť, postavíme nové příčky, uděláme bytové jádro, podlahy, sádrokartony,
-            rozvody i povrchy. Na klíč, nebo jen tu část, která vás trápí. Řeknete, co chcete
-            změnit — my navrhneme, jak na to.
-          </p>
-          <a href="/sluzby/rekonstrukce" class="service-link">
-            Zjistit více
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-
-        <div class="service-card">
-          <div class="service-number">03</div>
-          <h3>Dílčí stavební činnost</h3>
-          <p>
-            Někdy nejde o celou stavbu, ale o jednu konkrétní věc. Postavíme pergolu nebo přístřešek
-            na auto, položíme zámkovou dlažbu, dodáme materiál. Práce, kterou potřebujete hotovou —
-            bez toho, abyste kvůli ní zadávali velkou zakázku.
-          </p>
-          <a href="/sluzby/dilci-stavebni-cinnost" class="service-link">
-            Zjistit více
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
+      <div class="trust-row">
+        <p>Opřené o</p>
+        <div class="trust-grid">
+          {trustItems.map((item) => (
+            <div class="trust-pill">{item}</div>
+          ))}
         </div>
       </div>
-      <div class="services-cta">
-        <a href="/sluzby" class="btn btn-outline">Prohlédnout všechny služby</a>
+
+      <div class="mission-panel">
+        <img src="/images/service-novostavby.webp" alt="Dřevěná pergola a venkovní stavební práce" class="mission-image" loading="eager" decoding="async" />
+        <div class="mission-card">
+          <p class="section-kicker">Náš přístup</p>
+          <h3>Držet <span>domluvu</span> a ukazovat postup práce.</h3>
+          <p>Na stavbě nemá být chaos. Domluvíme rozsah, průběžně dokumentujeme postup a držíme jeden jasný kontakt po celou dobu.</p>
+          <a href="/kontakt" class="mission-link">Nezávazná poptávka
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -144,10 +150,8 @@ import Footer from '../components/Footer.astro';
         </p>
       </div>
       <div class="gallery-grid">
-        {Array.from({ length: 6 }).map((_, i) => (
-          <div class="img-placeholder gallery-thumb" aria-hidden="true">
-            <span>Foto {i + 1}</span>
-          </div>
+        {homeGallery.map((image) => (
+          <img src={image.src} alt={image.alt} class="site-photo gallery-thumb" loading="eager" decoding="async" />
         ))}
       </div>
       <div class="gallery-cta">
@@ -341,11 +345,17 @@ import Footer from '../components/Footer.astro';
   position: relative;
 }
 
-.hero-img {
+.site-photo {
+  display: block;
   width: 100%;
+  object-fit: cover;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.hero-img {
   aspect-ratio: 4/3;
-  border-radius: var(--radius-lg);
-  font-size: 0.875rem;
+  border-radius: 18px;
 }
 
 .hero-badge {
@@ -389,8 +399,7 @@ import Footer from '../components/Footer.astro';
 }
 
 .about-img {
-  border-radius: var(--radius-lg);
-  font-size: 0.875rem;
+  border-radius: 18px;
 }
 
 .about-img--big {
@@ -436,60 +445,165 @@ import Footer from '../components/Footer.astro';
   color: var(--color-text-muted);
 }
 
-/* ── Služby grid ──────────────────────────────────────── */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background-color: var(--color-border);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
+/* ── Služby grid podle reference ─────────────────────── */
+.services-section {
+  background-color: #f3f7fb;
 }
 
-.service-card {
-  background-color: var(--color-bg);
-  padding: 2.5rem 2rem;
+.section-top {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  justify-content: space-between;
+  align-items: end;
+  gap: 2rem;
+  margin-bottom: 4rem;
 }
 
-.service-number {
-  font-family: var(--font-heading);
-  font-size: 0.8125rem;
+.section-kicker {
+  font-size: 0.6875rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--color-accent);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 0.75rem;
 }
 
-.service-card h3 {
-  font-size: 1.1875rem;
+.section-top h2 {
+  max-width: 10ch;
 }
 
-.service-card p {
-  font-size: 0.9375rem;
-  flex: 1;
+.section-top h2 span,
+.mission-card h3 span {
+  color: #1e8fd1;
 }
 
+.section-link,
+.mission-link,
 .service-link {
   display: inline-flex;
   align-items: center;
   gap: 0.375rem;
-  font-size: 0.9375rem;
-  font-weight: 600;
+  font-size: 0.875rem;
+  font-weight: 700;
   color: var(--color-primary);
-  margin-top: 0.5rem;
-  transition: gap var(--transition);
+  transition: gap var(--transition), color var(--transition);
 }
 
+.section-link:hover,
+.mission-link:hover,
 .service-link:hover {
   gap: 0.625rem;
+  color: #1e8fd1;
 }
 
-.services-cta {
-  margin-top: 2rem;
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem 3rem;
+}
+
+.service-card {
+  min-height: 172px;
+  padding-left: 2rem;
+  border-left: 1px solid rgba(20, 33, 61, 0.14);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.service-number {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #1e8fd1;
+  margin-bottom: 0.8rem;
+}
+
+.service-card h3 {
+  font-size: clamp(1.3rem, 2vw, 1.75rem);
+  max-width: 11ch;
+  margin-bottom: 0.75rem;
+}
+
+.service-card p {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  max-width: 28ch;
+  margin-bottom: 1rem;
+}
+
+.trust-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  align-items: start;
+  margin-top: 6rem;
+}
+
+.trust-row > p {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.trust-pill {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid rgba(20, 33, 61, 0.07);
+  border-radius: 14px;
+  font-weight: 700;
+  color: var(--color-primary);
+  box-shadow: 0 12px 30px rgba(20, 33, 61, 0.04);
+}
+
+.mission-panel {
+  position: relative;
+  margin-top: 6rem;
+  min-height: 430px;
+  border-radius: 22px;
+  overflow: hidden;
+  background-image: linear-gradient(90deg, rgba(20,33,61,0.08), rgba(20,33,61,0.22)), url('/images/service-novostavby.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+.mission-image {
+  display: none;
+}
+
+.mission-card {
+  position: absolute;
+  left: 2rem;
+  bottom: 2rem;
+  width: min(520px, calc(100% - 4rem));
+  padding: 2.25rem;
+  background-color: #fff;
+  border-radius: 18px;
+  box-shadow: 0 24px 60px rgba(20, 33, 61, 0.18);
+}
+
+.mission-card h3 {
+  font-size: clamp(1.7rem, 3vw, 2.35rem);
+  margin-bottom: 1rem;
+}
+
+.mission-card p:not(.section-kicker) {
+  font-size: 0.95rem;
+  max-width: 52ch;
+  margin-bottom: 1.5rem;
 }
 
 /* ── Galerie ──────────────────────────────────────────── */
@@ -501,8 +615,7 @@ import Footer from '../components/Footer.astro';
 
 .gallery-thumb {
   aspect-ratio: 4/3;
-  border-radius: var(--radius-lg);
-  font-size: 0.875rem;
+  border-radius: 18px;
   transition: opacity var(--transition);
 }
 
@@ -673,8 +786,13 @@ import Footer from '../components/Footer.astro';
 /* ── Responsive ───────────────────────────────────────── */
 @media (max-width: 1024px) {
   .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 2rem;
+  }
+
+  .trust-row {
     grid-template-columns: 1fr;
-    gap: 1px;
+    gap: 1.5rem;
   }
 
   .testimonials-grid {
@@ -712,6 +830,29 @@ import Footer from '../components/Footer.astro';
 @media (max-width: 600px) {
   .hero {
     padding-block: 3rem 3rem;
+  }
+
+  .section-top {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 3rem;
+  }
+
+  .services-grid,
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-panel,
+  .mission-image {
+    min-height: 560px;
+  }
+
+  .mission-card {
+    left: 1rem;
+    bottom: 1rem;
+    width: calc(100% - 2rem);
+    padding: 1.5rem;
   }
 
   .gallery-grid {

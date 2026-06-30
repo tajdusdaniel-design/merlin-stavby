@@ -2,6 +2,18 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+
+const galleryImages = [
+  { src: '/images/gallery-kuchyn-svetla.webp', alt: 'Světlá kuchyň po rekonstrukci' },
+  { src: '/images/gallery-kuchyn-bila.webp', alt: 'Bílá kuchyňská linka po dokončení' },
+  { src: '/images/gallery-koupelna-sprcha.webp', alt: 'Koupelna se sprchovým koutem' },
+  { src: '/images/gallery-koupelna-stresni.webp', alt: 'Rekonstrukce koupelny v podkroví' },
+  { src: '/images/gallery-chodba.webp', alt: 'Dokončená chodba v interiéru' },
+  { src: '/images/gallery-kuchyn-seda.webp', alt: 'Šedá kuchyň po rekonstrukci' },
+  { src: '/images/service-rekonstrukce.webp', alt: 'Detail koupelny po rekonstrukci' },
+  { src: '/images/about-stavba.webp', alt: 'Venkovní stavební práce u domu' },
+  { src: '/images/service-dilci.webp', alt: 'Dokončený přístřešek u domu' },
+];
 ---
 
 <Layout
@@ -28,10 +40,8 @@ import Footer from '../components/Footer.astro';
       </div>
 
       <div class="gallery-grid">
-        {Array.from({ length: 12 }).map((_, i) => (
-          <div class="img-placeholder gallery-item" aria-hidden="true">
-            <span>Foto {i + 1}</span>
-          </div>
+        {galleryImages.map((image) => (
+          <img src={image.src} alt={image.alt} class="gallery-item" loading="eager" decoding="async" />
         ))}
       </div>
     </div>
@@ -56,9 +66,11 @@ import Footer from '../components/Footer.astro';
 }
 
 .gallery-item {
+  width: 100%;
   aspect-ratio: 4/3;
-  border-radius: var(--radius-lg);
-  font-size: 0.875rem;
+  object-fit: cover;
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
   cursor: pointer;
   transition: opacity var(--transition);
 }
