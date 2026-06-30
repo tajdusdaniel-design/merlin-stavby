@@ -1,0 +1,203 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout
+  title="Služby"
+  description="Postavíme nový dům, zrekonstruujeme ten stávající, nebo vyřešíme jednu konkrétní práci."
+>
+  <Nav slot="header" />
+
+  <section class="page-hero section">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Drobečková navigace">
+        <a href="/">Domů</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Služby</span>
+      </nav>
+      <h1>Služby</h1>
+      <p class="page-lead">
+        Postavíme nový dům, zrekonstruujeme ten stávající, nebo vyřešíme jednu konkrétní práci.
+        Vždycky tak, abyste věděli, co se děje a kdy bude hotovo.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="container">
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-number">01</div>
+          <h2 class="service-title">Novostavby</h2>
+          <p>
+            Postavíme váš dům na klíč — od základové desky přes hrubou stavbu, střechu a
+            sádrokartonové konstrukce až po podlahy a dokončovací práce. Máte vlastní řemeslníky
+            na část stavby? Navážeme přesně tam, kde nás potřebujete. Jeden dodavatel od začátku
+            do konce znamená, že nekoordinujete pět part najednou.
+          </p>
+          <a href="/sluzby/novostavby" class="service-link">
+            Zjistit více
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-number">02</div>
+          <h2 class="service-title">Rekonstrukce</h2>
+          <p>
+            Zrekonstruujeme byt i dům, od první rány kladivem po poslední nátěr. Vybouráme,
+            odvezeme suť, postavíme nové příčky, uděláme bytové jádro, podlahy, sádrokartony,
+            rozvody i povrchy. Na klíč, nebo jen tu část, která vás trápí.
+          </p>
+          <a href="/sluzby/rekonstrukce" class="service-link">
+            Zjistit více
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-number">03</div>
+          <h2 class="service-title">Dílčí stavební činnost</h2>
+          <p>
+            Někdy nejde o celou stavbu, ale o jednu konkrétní věc. Postavíme pergolu nebo přístřešek
+            na auto, položíme zámkovou dlažbu, dodáme materiál. Práce, kterou potřebujete hotovou —
+            bez toho, abyste kvůli ní zadávali velkou zakázku.
+          </p>
+          <a href="/sluzby/dilci-stavebni-cinnost" class="service-link">
+            Zjistit více
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="spec-title">Specializace</h2>
+      <ul class="spec-list">
+        <li>Základové desky, hrubá stavba, dřevostavba</li>
+        <li>Sádrokartonové konstrukce</li>
+        <li>Podlahářské práce</li>
+        <li>Stavby domů a rekonstrukce</li>
+        <li>Pergoly, přístřešky pro auta</li>
+        <li>Rekonstrukce bytů</li>
+      </ul>
+      <div class="spec-cta">
+        <a href="/kontakt" class="btn btn-primary">Nezávazná poptávka</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>
+
+<style>
+.page-hero {
+  padding-bottom: 3rem;
+}
+
+.page-lead {
+  font-size: 1.125rem;
+  max-width: 60ch;
+  margin-top: 1.25rem;
+  line-height: 1.7;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background-color: var(--color-border);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.service-card {
+  background-color: var(--color-bg);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.service-number {
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+}
+
+.service-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.service-card p {
+  font-size: 0.9375rem;
+  flex: 1;
+}
+
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-top: 0.5rem;
+  transition: gap var(--transition);
+}
+
+.service-link:hover {
+  gap: 0.625rem;
+}
+
+.spec-title {
+  font-size: 1.375rem;
+  margin-bottom: 1.5rem;
+}
+
+.spec-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem 3rem;
+  margin-bottom: 3rem;
+}
+
+.spec-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1rem;
+  color: var(--color-text-muted);
+}
+
+.spec-list li::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.spec-cta {
+  margin-top: 1rem;
+}
+
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .spec-list {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

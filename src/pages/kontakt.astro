@@ -1,0 +1,343 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Kontakt"
+  description="Zavolejte, napište, nebo vyplňte formulář. Ozveme se a přijedeme se podívat."
+>
+  <Nav slot="header" />
+
+  <section class="section">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Drobečková navigace">
+        <a href="/">Domů</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Kontakt</span>
+      </nav>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h1>Kontakt</h1>
+          <p class="contact-lead">
+            Zavolejte, napište, nebo vyplňte formulář. Ozveme se, přijedeme se podívat
+            a řekneme vám, jak by vaše stavba mohla vypadat.
+          </p>
+
+          <div class="contact-items">
+            <a href="tel:+420702810121" class="contact-item">
+              <div class="contact-item-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.25h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.98-.98a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="contact-item-label">Telefon</p>
+                <p class="contact-item-value">702 810 121</p>
+              </div>
+            </a>
+
+            <a href="mailto:info@merlinstavby.cz" class="contact-item">
+              <div class="contact-item-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div>
+                <p class="contact-item-label">E-mail</p>
+                <p class="contact-item-value">info@merlinstavby.cz</p>
+              </div>
+            </a>
+
+            <div class="contact-item contact-item--static">
+              <div class="contact-item-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div>
+                <p class="contact-item-label">Adresa</p>
+                <p class="contact-item-value">Jiřího Herolda 1559/10<br>700 30 Ostrava</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-social">
+            <a href="https://www.instagram.com/merlinstavby" target="_blank" rel="noopener" class="social-link">
+              Instagram
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+            <a href="https://www.facebook.com/merlinstavbysro" target="_blank" rel="noopener" class="social-link">
+              Facebook
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap">
+          <h2 class="form-title">Nezávazná poptávka</h2>
+          <form class="contact-form" novalidate>
+            <!-- honeypot -->
+            <input type="text" name="website" tabindex="-1" aria-hidden="true" style="display:none;" autocomplete="off" />
+
+            <div class="field">
+              <label for="name" class="field-label">Jméno</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="field-input"
+                autocomplete="name"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="contact" class="field-label">Telefon nebo e-mail</label>
+              <input
+                type="text"
+                id="contact"
+                name="contact"
+                class="field-input"
+                autocomplete="email"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="interest" class="field-label">Mám zájem o</label>
+              <div class="select-wrap">
+                <select id="interest" name="interest" class="field-input field-select">
+                  <option value="">Vyberte...</option>
+                  <option value="novostavba">Novostavbu</option>
+                  <option value="rekonstrukce">Rekonstrukci</option>
+                  <option value="dilci-prace">Dílčí práce</option>
+                  <option value="nevim">Nevím, poradíte</option>
+                </select>
+                <svg class="select-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="message" class="field-label">Zpráva</label>
+              <textarea
+                id="message"
+                name="message"
+                class="field-input field-textarea"
+                rows="5"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary submit-btn">Odeslat poptávku</button>
+            <p class="form-note">Ozveme se vám zpravidla do druhého pracovního dne.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>
+
+<style>
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.contact-info h1 {
+  margin-bottom: 1rem;
+}
+
+.contact-lead {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color var(--transition);
+}
+
+.contact-item:last-child {
+  border-bottom: none;
+}
+
+a.contact-item:hover {
+  background-color: var(--color-surface);
+}
+
+.contact-item--static {
+  cursor: default;
+}
+
+.contact-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-baby-blue);
+  border-radius: var(--radius-md);
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.contact-item-label {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.125rem;
+}
+
+.contact-item-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1.4;
+}
+
+.contact-social {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  transition: color var(--transition);
+}
+
+.social-link:hover {
+  color: var(--color-primary);
+}
+
+/* Form */
+.contact-form-wrap {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+}
+
+.form-title {
+  font-size: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.field-input {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: border-color var(--transition);
+  width: 100%;
+}
+
+.field-input:focus {
+  border-color: var(--color-accent);
+}
+
+.field-input.field-select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.select-wrap {
+  position: relative;
+}
+
+.select-arrow {
+  position: absolute;
+  right: 0.875rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.field-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit-btn {
+  width: 100%;
+  justify-content: center;
+  padding: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.form-note {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+</style>
+
+<script>
+  /* Prefill select ze search params */
+  const params = new URLSearchParams(window.location.search);
+  const zajem = params.get('zajem');
+  if (zajem) {
+    const select = document.getElementById('interest') as HTMLSelectElement | null;
+    if (select) {
+      const map: Record<string, string> = {
+        novostavba: 'novostavba',
+        rekonstrukce: 'rekonstrukce',
+        'dilci-prace': 'dilci-prace',
+      };
+      if (map[zajem]) select.value = map[zajem];
+    }
+  }
+</script>

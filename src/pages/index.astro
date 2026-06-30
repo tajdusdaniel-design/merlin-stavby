@@ -1,0 +1,725 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Stavba a rekonstrukce"
+  description="Postavíme nový dům nebo zrekonstruujeme ten váš. Budete vědět, kdy bude hotovo, co to stojí a jak práce pokračuje."
+>
+  <Nav slot="header" />
+
+  <!-- ── HERO ─────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Stavební firma · Ostrava &amp; Frýdek-Místek</p>
+        <h1>Stavba a rekonstrukce,&nbsp;u&nbsp;které pořád víte, co se děje</h1>
+        <p class="hero-sub">
+          Postavíme nový dům nebo zrekonstruujeme ten váš — od demolice po nastěhování.
+          Budete vědět, kdy bude hotovo, co to stojí a jak práce pokračuje. I když zrovna
+          nejste na místě. Nemusíte nás hlídat. To je naše práce, ne vaše.
+        </p>
+        <div class="hero-ctas">
+          <a href="/kontakt" class="btn btn-primary">Poptat rekonstrukci</a>
+          <a href="/sluzby" class="btn btn-outline">Prohlédnout služby</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="img-placeholder hero-img" aria-hidden="true">
+          <span>Foto realizace</span>
+        </div>
+        <div class="hero-badge">
+          <span class="hero-badge-num">20+</span>
+          <span class="hero-badge-label">let praxe týmu</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── KDO JSME ──────────────────────────────────────── -->
+  <section class="section">
+    <div class="container about-grid">
+      <div class="about-images">
+        <div class="img-placeholder about-img about-img--big" aria-hidden="true">
+          <span>Fotka ze stavby</span>
+        </div>
+        <div class="img-placeholder about-img about-img--small" aria-hidden="true">
+          <span>Detail práce</span>
+        </div>
+      </div>
+      <div class="about-content">
+        <h2>Kdo jsme</h2>
+        <p>
+          Jsme stavební firma z Ostravy. Náš tým má za sebou přes 20 let praxe — od rekonstrukcí
+          bytů po stavby celých domů. Za tu dobu jsme se naučili jednu věc: na stavbě nerozhoduje
+          jen to, co umíte postavit, ale jestli držíte slovo. Co domluvíme, to platí.
+          Spolupracujeme jen s řemeslníky, které známe a kterým věříme, protože dobrá práce
+          je vždycky o lidech.
+        </p>
+        <div class="about-stats">
+          <div class="about-stat">
+            <span class="about-stat-num">20+</span>
+            <span class="about-stat-label">let praxe týmu</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat-num">MSK</span>
+            <span class="about-stat-label">kraj působení</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat-num">1</span>
+            <span class="about-stat-label">kontakt po celou dobu</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SLUŽBY ────────────────────────────────────────── -->
+  <section class="section section--surface">
+    <div class="container">
+      <div class="section__header">
+        <h2>Co u nás zařídíte</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-number">01</div>
+          <h3>Novostavby</h3>
+          <p>
+            Postavíme váš dům na klíč — od základové desky přes hrubou stavbu, střechu a
+            sádrokartonové konstrukce až po podlahy a dokončovací práce. Máte vlastní řemeslníky
+            na část stavby? Navážeme přesně tam, kde nás potřebujete. Jeden dodavatel od začátku
+            do konce znamená, že nekoordinujete pět part najednou — staráme se o to my.
+          </p>
+          <a href="/sluzby/novostavby" class="service-link">
+            Zjistit více
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-number">02</div>
+          <h3>Rekonstrukce</h3>
+          <p>
+            Zrekonstruujeme byt i dům, od první rány kladivem po poslední nátěr. Vybouráme,
+            odvezeme suť, postavíme nové příčky, uděláme bytové jádro, podlahy, sádrokartony,
+            rozvody i povrchy. Na klíč, nebo jen tu část, která vás trápí. Řeknete, co chcete
+            změnit — my navrhneme, jak na to.
+          </p>
+          <a href="/sluzby/rekonstrukce" class="service-link">
+            Zjistit více
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-number">03</div>
+          <h3>Dílčí stavební činnost</h3>
+          <p>
+            Někdy nejde o celou stavbu, ale o jednu konkrétní věc. Postavíme pergolu nebo přístřešek
+            na auto, položíme zámkovou dlažbu, dodáme materiál. Práce, kterou potřebujete hotovou —
+            bez toho, abyste kvůli ní zadávali velkou zakázku.
+          </p>
+          <a href="/sluzby/dilci-stavebni-cinnost" class="service-link">
+            Zjistit více
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="services-cta">
+        <a href="/sluzby" class="btn btn-outline">Prohlédnout všechny služby</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GALERIE TEASER ────────────────────────────────── -->
+  <section class="section">
+    <div class="container">
+      <div class="section__header">
+        <h2>Jak naše práce vypadá v praxi</h2>
+        <p class="section__lead">
+          Každou zakázku průběžně fotíme — nejen pro sebe, ale hlavně pro vás. Můžete být klidně
+          na dovolené a pořád vidíte, kam se stavba posunula.
+        </p>
+      </div>
+      <div class="gallery-grid">
+        {Array.from({ length: 6 }).map((_, i) => (
+          <div class="img-placeholder gallery-thumb" aria-hidden="true">
+            <span>Foto {i + 1}</span>
+          </div>
+        ))}
+      </div>
+      <div class="gallery-cta">
+        <a href="/galerie" class="btn btn-outline">Celá galerie</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROČ MERLIN ───────────────────────────────────── -->
+  <section class="section section--surface">
+    <div class="container">
+      <div class="section__header text-center">
+        <h2>Co tím získáte</h2>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3>Pořád víte, co se děje</h3>
+          <p>
+            Postup vám dokumentujeme. Žádné týdny ticha, kdy netušíte, jestli se vůbec něco děje.
+            Otevřete telefon a vidíte, jak stavba pokračuje.
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <h3>Dostanete to, co bylo domluvené</h3>
+          <p>
+            Stavíme podle projektu a podle něj volíme i materiál. Na čem se domluvíme na začátku,
+            to platí na konci. Bez překvapení na faktuře.
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Řemeslníky hlídáme my, ne vy</h3>
+          <p>
+            Spolupracujeme jen s lidmi, které známe a kterým věříme. Nemusíte chodit na stavbu
+            kontrolovat, jestli se pracuje. To je naše starost.
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+          </div>
+          <h3>Předáním to nekončí</h3>
+          <p>
+            Když se po dokončení objeví cokoliv k doladění, ozvěte se. Nezmizíme ve chvíli,
+            kdy je zaplaceno.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── RECENZE TEASER ────────────────────────────────── -->
+  <section class="section">
+    <div class="container">
+      <div class="section__header">
+        <h2>Co o nás říkají zákazníci</h2>
+        <p class="section__lead">Reference od lidí, pro které jsme stavěli nebo rekonstruovali.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card" data-placeholder="true">
+          <div class="testimonial-quote" aria-hidden="true">&ldquo;</div>
+          <p class="testimonial-text">
+            Rekonstrukci bytu 3+1 zvládli přesně v termínu, na kterém jsme se domluvili.
+            Co mě nejvíc překvapilo — celou dobu jsem věděl, v jaké fázi jsme, protože nám
+            pravidelně posílali fotky. Žádné hádání, kdy přijdou.
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" aria-hidden="true">PH</div>
+            <div>
+              <p class="testimonial-name">Petr H.</p>
+              <p class="testimonial-role">Ostrava</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card" data-placeholder="true">
+          <div class="testimonial-quote" aria-hidden="true">&ldquo;</div>
+          <p class="testimonial-text">
+            Hledali jsme firmu na celou rekonstrukci domu a báli jsme se, že to bude boj.
+            Nakonec úplný opak. Domluva platila, cena se nezměnila a když jsme něco potřebovali
+            doladit i po předání, vyřešili to bez řečí.
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" aria-hidden="true">LT</div>
+            <div>
+              <p class="testimonial-name">Lucie a Tomáš M.</p>
+              <p class="testimonial-role">Frýdek-Místek</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card" data-placeholder="true">
+          <div class="testimonial-quote" aria-hidden="true">&ldquo;</div>
+          <p class="testimonial-text">
+            Stavěli nám hrubou stavbu rodinného domu. Pracovalo se každý den, nemuseli jsme
+            nikoho honit. Konečně firma, na kterou je spoleh.
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" aria-hidden="true">JK</div>
+            <div>
+              <p class="testimonial-name">Jan K.</p>
+              <p class="testimonial-role">Brušperk</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonials-cta">
+        <a href="/recenze" class="btn btn-outline">Zobrazit reference</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FINÁLNÍ CTA ───────────────────────────────────── -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-block">
+        <h2>Plánujete stavbu nebo rekonstrukci?</h2>
+        <p>
+          Přijedeme se podívat, v klidu probereme, co potřebujete, a řekneme vám, jak by to šlo.
+          Nezávazně a zdarma.
+        </p>
+        <div class="cta-actions">
+          <a href="/kontakt" class="btn btn-primary cta-btn">Nezávazná poptávka</a>
+          <a href="tel:+420702810121" class="cta-phone">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.25h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.98-.98a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            702 810 121
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>
+
+<style>
+/* ── Hero ─────────────────────────────────────────────── */
+.hero {
+  padding-block: 5rem 4rem;
+  overflow: hidden;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 4rem;
+}
+
+.hero-eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 1.25rem;
+}
+
+.hero-content h1 {
+  margin-bottom: 1.5rem;
+}
+
+.hero-sub {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  max-width: 52ch;
+  margin-bottom: 2.5rem;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.hero-visual {
+  position: relative;
+}
+
+.hero-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: var(--radius-lg);
+  font-size: 0.875rem;
+}
+
+.hero-badge {
+  position: absolute;
+  bottom: -1rem;
+  left: -1.5rem;
+  background-color: var(--color-primary);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  box-shadow: 0 8px 24px rgba(20,33,61,0.25);
+}
+
+.hero-badge-num {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.hero-badge-label {
+  font-size: 0.75rem;
+  opacity: 0.75;
+}
+
+/* ── Kdo jsme ─────────────────────────────────────────── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 4rem;
+}
+
+.about-images {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.about-img {
+  border-radius: var(--radius-lg);
+  font-size: 0.875rem;
+}
+
+.about-img--big {
+  aspect-ratio: 4/3;
+}
+
+.about-img--small {
+  aspect-ratio: 16/7;
+}
+
+.about-content h2 {
+  margin-bottom: 1.25rem;
+}
+
+.about-content p {
+  line-height: 1.75;
+}
+
+.about-stats {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.about-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.about-stat-num {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.about-stat-label {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+/* ── Služby grid ──────────────────────────────────────── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background-color: var(--color-border);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.service-card {
+  background-color: var(--color-bg);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.service-number {
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+}
+
+.service-card h3 {
+  font-size: 1.1875rem;
+}
+
+.service-card p {
+  font-size: 0.9375rem;
+  flex: 1;
+}
+
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-top: 0.5rem;
+  transition: gap var(--transition);
+}
+
+.service-link:hover {
+  gap: 0.625rem;
+}
+
+.services-cta {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* ── Galerie ──────────────────────────────────────────── */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.gallery-thumb {
+  aspect-ratio: 4/3;
+  border-radius: var(--radius-lg);
+  font-size: 0.875rem;
+  transition: opacity var(--transition);
+}
+
+.gallery-thumb:hover {
+  opacity: 0.85;
+}
+
+.gallery-cta {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+/* ── Benefity ─────────────────────────────────────────── */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background-color: var(--color-border);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.benefit-card {
+  background-color: var(--color-surface);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.benefit-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: var(--color-baby-blue);
+  border-radius: var(--radius-md);
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.benefit-card h3 {
+  font-size: 1.0625rem;
+}
+
+.benefit-card p {
+  font-size: 0.9375rem;
+}
+
+/* ── Recenze ──────────────────────────────────────────── */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.testimonial-card {
+  background-color: var(--color-testimonial-bg);
+  color: var(--color-testimonial-text);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.testimonial-quote {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-baby-blue);
+  line-height: 1;
+  opacity: 0.6;
+}
+
+.testimonial-text {
+  color: rgba(255,255,255,0.85);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  flex: 1;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.testimonial-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.testimonial-name {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: white;
+}
+
+.testimonial-role {
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.55);
+}
+
+.testimonials-cta {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+/* ── Finální CTA ──────────────────────────────────────── */
+.cta-section {
+  background-color: var(--color-surface);
+}
+
+.cta-block {
+  max-width: 640px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.cta-block h2 {
+  margin-bottom: 1rem;
+}
+
+.cta-block p {
+  font-size: 1.0625rem;
+  margin-bottom: 2.5rem;
+}
+
+.cta-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  padding: 0.875rem 2rem;
+}
+
+.cta-phone {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 1.0625rem;
+  color: var(--color-primary);
+  transition: color var(--transition);
+}
+
+.cta-phone:hover {
+  color: var(--color-accent);
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1px;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hero-badge {
+    left: auto;
+    right: 1rem;
+    bottom: -0.75rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding-block: 3rem 3rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-stats {
+    gap: 1.5rem;
+  }
+}
+</style>

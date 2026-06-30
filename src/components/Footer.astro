@@ -1,0 +1,193 @@
+---
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="logo" aria-label="Merlin Stavby">
+        <span class="logo-mark">M</span>
+        <span class="logo-text">Merlin <strong>Stavby</strong></span>
+      </a>
+      <p class="footer-tagline">Stavba a rekonstrukce, u které pořád víte, co se děje.</p>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-col">
+        <p class="footer-col-title">Služby</p>
+        <ul>
+          <li><a href="/sluzby/novostavby">Novostavby</a></li>
+          <li><a href="/sluzby/rekonstrukce">Rekonstrukce</a></li>
+          <li><a href="/sluzby/dilci-stavebni-cinnost">Dílčí stavební činnost</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title">Web</p>
+        <ul>
+          <li><a href="/galerie">Galerie</a></li>
+          <li><a href="/recenze">Recenze</a></li>
+          <li><a href="/kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title">Kontakt</p>
+        <ul>
+          <li><a href="tel:+420702810121">702 810 121</a></li>
+          <li><a href="mailto:info@merlinstavby.cz">info@merlinstavby.cz</a></li>
+          <li>
+            <a href="https://www.instagram.com/merlinstavby" target="_blank" rel="noopener">Instagram</a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/merlinstavbysro" target="_blank" rel="noopener">Facebook</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p class="footer-legal">
+        Merlin stavby s.r.o. &middot; Jiřího Herolda 1559/10, 700 30 Ostrava &middot; IČ 17133921
+      </p>
+      <p class="footer-copy">
+        &copy; <span id="footer-year"></span> Merlin stavby s.r.o.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const el = document.getElementById('footer-year');
+  if (el) el.textContent = String(new Date().getFullYear());
+</script>
+
+<style>
+.site-footer {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  margin-top: auto;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  padding-block: 4rem;
+}
+
+/* Brand */
+.footer-brand .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 1rem;
+}
+
+.footer-brand .logo-mark {
+  background-color: rgba(255,255,255,0.15);
+  color: white;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.125rem;
+  border-radius: var(--radius-sm);
+}
+
+.footer-brand .logo-text {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+}
+
+.footer-brand .logo-text strong {
+  font-weight: 700;
+  color: white;
+}
+
+.footer-tagline {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.5;
+  max-width: 28ch;
+}
+
+/* Links */
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.footer-col-title {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 1rem;
+}
+
+.footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.footer-col a {
+  font-size: 0.9375rem;
+  color: rgba(255,255,255,0.8);
+  transition: color var(--transition);
+}
+
+.footer-col a:hover {
+  color: white;
+}
+
+/* Bottom bar */
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 1.25rem;
+  gap: 1rem;
+}
+
+.footer-legal,
+.footer-copy {
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.45);
+}
+
+@media (max-width: 900px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-block: 3rem;
+  }
+
+  .footer-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .footer-links {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+</style>

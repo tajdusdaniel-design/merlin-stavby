@@ -1,0 +1,97 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Galerie"
+  description="Výběr z dokončených i rozpracovaných zakázek Merlin Stavby."
+>
+  <Nav slot="header" />
+
+  <section class="section">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Drobečková navigace">
+        <a href="/">Domů</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Galerie</span>
+      </nav>
+
+      <div class="section__header">
+        <h1>Naše práce</h1>
+        <p class="section__lead">
+          Výběr z dokončených i rozpracovaných zakázek. Část fotek pravidelně přidáváme
+          i na <a href="https://www.instagram.com/merlinstavby" target="_blank" rel="noopener" class="inline-link">Instagram</a>
+          a <a href="https://www.facebook.com/merlinstavbysro" target="_blank" rel="noopener" class="inline-link">Facebook</a>.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        {Array.from({ length: 12 }).map((_, i) => (
+          <div class="img-placeholder gallery-item" aria-hidden="true">
+            <span>Foto {i + 1}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="container cta-block">
+      <h2>Chcete vidět konkrétní typ práce?</h2>
+      <p>Napište nám, co vás zajímá — pošleme vám fotky přímo ze zakázek.</p>
+      <a href="/kontakt" class="btn btn-primary" style="margin-top:1.5rem;">Kontaktovat nás</a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>
+
+<style>
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.gallery-item {
+  aspect-ratio: 4/3;
+  border-radius: var(--radius-lg);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: opacity var(--transition);
+}
+
+.gallery-item:hover {
+  opacity: 0.85;
+}
+
+.inline-link {
+  color: var(--color-accent);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cta-block {
+  max-width: 600px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.cta-block h2 { margin-bottom: 0.75rem; }
+.cta-block p { font-size: 1.0625rem; }
+
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

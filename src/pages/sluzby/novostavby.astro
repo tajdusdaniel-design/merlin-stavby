@@ -1,0 +1,173 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout
+  title="Novostavby"
+  description="Postavíme váš dům na klíč. Nebo navážeme na fázi, kterou už máte rozjednanou."
+>
+  <Nav slot="header" />
+
+  <section class="section page-section">
+    <div class="container page-grid">
+      <div class="page-content">
+        <nav class="breadcrumb" aria-label="Drobečková navigace">
+          <a href="/">Domů</a>
+          <span aria-hidden="true">/</span>
+          <a href="/sluzby">Služby</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Novostavby</span>
+        </nav>
+
+        <h1>Novostavby</h1>
+        <p class="page-lead">Postavíme váš dům na klíč. Nebo navážeme na fázi, kterou už máte rozjednanou.</p>
+
+        <h2>Co stavba na klíč zahrnuje</h2>
+        <p>
+          Začínáme základovou deskou a pokračujeme hrubou stavbou — zděnou, nebo dřevostavbou,
+          podle toho, co si vyberete. Pak střecha, sádrokartonové konstrukce, rozvody a podlahy,
+          až po dokončovací práce. Stavíme podle projektu a podle něj volíme materiál, takže výsledek
+          odpovídá tomu, co bylo na papíře.
+        </p>
+        <p>
+          Potřebujete jen hrubou stavbu nebo naopak jen dotáhnout dokončovací práce?
+          Navážeme tam, kde nás potřebujete.
+        </p>
+
+        <p class="page-note">
+          Pro každého, kdo staví nový rodinný dům a nechce trávit večery koordinací zedníků,
+          elektrikářů a podlahářů. Postaráme se o celou stavbu my — vy řešíte jednoho dodavatele
+          místo deseti.
+        </p>
+
+        <a href="/kontakt?zajem=novostavba" class="btn btn-primary page-cta">Poptat novostavbu</a>
+      </div>
+
+      <aside class="page-sidebar">
+        <div class="img-placeholder sidebar-img" aria-hidden="true">
+          <span>Foto novostavby</span>
+        </div>
+        <div class="sidebar-box">
+          <p class="sidebar-box-title">Týká se vás to?</p>
+          <ul class="sidebar-list">
+            <li>Stavíte dům poprvé</li>
+            <li>Nechcete koordinovat více řemeslníků</li>
+            <li>Máte projekt a hledáte dodavatele</li>
+            <li>Potřebujete jen část stavby</li>
+          </ul>
+          <a href="/kontakt?zajem=novostavba" class="btn btn-primary" style="width:100%; justify-content:center; margin-top:1.5rem;">Poptat novostavbu</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>
+
+<style>
+  .page-section {
+    padding-top: 3rem;
+  }
+
+  .page-grid {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .page-content h1 {
+    margin-bottom: 1rem;
+  }
+
+  .page-lead {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    color: var(--color-text-muted);
+  }
+
+  .page-content h2 {
+    font-size: 1.375rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .page-content p {
+    margin-bottom: 1.25rem;
+  }
+
+  .page-note {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: var(--color-surface);
+    border-left: 3px solid var(--color-accent);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    font-size: 1rem;
+  }
+
+  .page-cta {
+    margin-top: 2.5rem;
+  }
+
+  .sidebar-img {
+    aspect-ratio: 3/4;
+    border-radius: var(--radius-lg);
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+  }
+
+  .sidebar-box {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+  }
+
+  .sidebar-box-title {
+    font-family: var(--font-heading);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    margin-bottom: 1rem;
+  }
+
+  .sidebar-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  .sidebar-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+  }
+
+  .sidebar-list li::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 900px) {
+    .page-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .page-sidebar {
+      order: -1;
+    }
+  }
+</style>
