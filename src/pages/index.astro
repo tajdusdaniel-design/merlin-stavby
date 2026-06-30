@@ -12,7 +12,6 @@ const services = [
   { number: '06', title: 'Pergoly a dlažby', text: 'Venkovní úpravy kolem domu, které mají být hotové čistě, pevně a bez dlouhého čekání.', href: '/sluzby/dilci-stavebni-cinnost' },
 ];
 
-const trustItems = ['20+ let praxe', 'MSK kraj', 'Jeden kontakt', 'Fotky z postupu', 'IČ veřejně dohledatelné', 'Reálné realizace'];
 
 const homeGallery = [
   { src: '/images/gallery-kuchyn-svetla.webp', alt: 'Světlá kuchyň po rekonstrukci' },
@@ -44,6 +43,23 @@ const homeGallery = [
         <div class="hero-ctas">
           <a href="/kontakt" class="btn btn-primary">Poptat rekonstrukci</a>
           <a href="/sluzby" class="btn btn-outline">Prohlédnout služby</a>
+        </div>
+
+        <div class="hero-trust">
+          <div class="hero-trust-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            20+ let zkušeností
+          </div>
+          <span class="hero-trust-sep" aria-hidden="true"></span>
+          <div class="hero-trust-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            Moravskoslezský kraj
+          </div>
+          <span class="hero-trust-sep" aria-hidden="true"></span>
+          <div class="hero-trust-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            Fotky z průběhu prací
+          </div>
         </div>
       </div>
     </div>
@@ -107,15 +123,6 @@ const homeGallery = [
             </a>
           </article>
         ))}
-      </div>
-
-      <div class="trust-row">
-        <p>Opřené o</p>
-        <div class="trust-grid">
-          {trustItems.map((item) => (
-            <div class="trust-pill">{item}</div>
-          ))}
-        </div>
       </div>
 
       <div class="mission-panel">
@@ -353,6 +360,39 @@ const homeGallery = [
   flex-wrap: wrap;
 }
 
+.hero-trust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.hero-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.hero-trust-item svg {
+  color: var(--color-secondary);
+  flex-shrink: 0;
+}
+
+.hero-trust-sep {
+  display: block;
+  width: 1px;
+  height: 14px;
+  background-color: rgba(255, 255, 255, 0.18);
+}
+
 .hero .btn-primary {
   background-color: white;
   border-color: white;
@@ -533,42 +573,6 @@ const homeGallery = [
   margin-bottom: 1rem;
 }
 
-.trust-row {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 3rem;
-  align-items: start;
-  margin-top: 6rem;
-}
-
-.trust-row > p {
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-}
-
-.trust-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-}
-
-.trust-pill {
-  min-height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 1rem;
-  background-color: #fff;
-  border: 1px solid rgba(20, 33, 61, 0.07);
-  border-radius: 14px;
-  font-weight: 700;
-  color: var(--color-primary);
-  box-shadow: 0 12px 30px rgba(20, 33, 61, 0.04);
-}
 
 .mission-panel {
   position: relative;
@@ -791,11 +795,6 @@ const homeGallery = [
     gap: 3rem 2rem;
   }
 
-  .trust-row {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
   .testimonials-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -827,14 +826,17 @@ const homeGallery = [
     font-size: 1rem;
   }
 
+  .hero-trust-sep {
+    display: none;
+  }
+
   .section-top {
     align-items: flex-start;
     flex-direction: column;
     margin-bottom: 3rem;
   }
 
-  .services-grid,
-  .trust-grid {
+  .services-grid {
     grid-template-columns: 1fr;
   }
 
