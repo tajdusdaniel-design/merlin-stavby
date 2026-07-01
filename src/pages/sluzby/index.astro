@@ -2,11 +2,6 @@
 import Layout from '../../layouts/Layout.astro';
 import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
-import { Image } from 'astro:assets';
-
-import imgNovostavby  from '../../assets/images/service-novostavby-kuchyn.jpg';
-import imgRekonstrukce from '../../assets/images/service-rekonstrukce-koupelna.jpg';
-import imgDilci       from '../../assets/images/service-dilci-pergola.jpg';
 ---
 
 <Layout
@@ -57,7 +52,7 @@ import imgDilci       from '../../assets/images/service-dilci-pergola.jpg';
       </div>
 
       <div class="service-visual">
-        <Image src={imgNovostavby} alt="Dokončená kuchyně v novostavbě" class="service-img" width={900} format="webp" quality={75} loading="eager" decoding="async" />
+        <img src="/images/service-novostavby-kuchyn.jpg" alt="Dokončená kuchyně v novostavbě" class="service-img" loading="eager" decoding="async" />
         <div class="service-note">
           <p>Pro každého, kdo staví nový rodinný dům a nechce trávit večery koordinací zedníků, elektrikářů a podlahářů.</p>
         </div>
@@ -69,7 +64,7 @@ import imgDilci       from '../../assets/images/service-dilci-pergola.jpg';
   <section class="section service-section service-section--alt" id="rekonstrukce">
     <div class="container service-grid service-grid--reversed">
       <div class="service-visual">
-        <Image src={imgRekonstrukce} alt="Zrekonstruovaná koupelna s dřevěnou podlahou" class="service-img" width={900} format="webp" quality={75} loading="lazy" decoding="async" />
+        <img src="/images/service-rekonstrukce-koupelna.jpg" alt="Zrekonstruovaná koupelna s dřevěnou podlahou" class="service-img" loading="lazy" decoding="async" />
         <div class="service-note">
           <p>Pro majitele bytů a rodinných domů, kteří chtějí rekonstrukci s jedním kontaktem po celou dobu.</p>
         </div>
@@ -129,7 +124,7 @@ import imgDilci       from '../../assets/images/service-dilci-pergola.jpg';
       </div>
 
       <div class="service-visual">
-        <Image src={imgDilci} alt="Dřevěná pergola — dílčí stavební práce" class="service-img" width={900} format="webp" quality={75} loading="lazy" decoding="async" />
+        <img src="/images/service-dilci-pergola.jpg" alt="Dřevěná pergola — dílčí stavební práce" class="service-img" loading="lazy" decoding="async" />
         <div class="service-note">
           <p>Pro každého, kdo má kolem domu konkrétní věc k vyřešení a nechce kvůli ní zadávat velkou zakázku.</p>
         </div>
