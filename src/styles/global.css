@@ -29,11 +29,11 @@
 /* ─── Design Tokens ─────────────────────────────────────── */
 :root {
   /* Barvy */
-  --color-primary:          #071426;
-  --color-primary-hover:    #0D1E36;
-  --color-accent:           #1E9DE0;
-  --color-accent-hover:     #178DCA;
-  --color-baby-blue:        #D8ECFF;
+  --color-primary:          #1c244b;
+  --color-primary-hover:    #242e5e;
+  --color-accent:           #6ec1e4;
+  --color-accent-hover:     #57afd4;
+  --color-baby-blue:        #d6eef8;
   --color-bg:               #FAFAFA;
   --color-surface:          #F3F7FB;
   --color-border:           #DDE6EF;
@@ -43,7 +43,7 @@
   --color-text-muted:       rgba(10,10,10,0.8);
   --color-text-inverse:     #FFFFFF;
 
-  --color-testimonial-bg:   #071426;
+  --color-testimonial-bg:   #1c244b;
   --color-testimonial-text: #FFFFFF;
 
   --color-success:          #16A34A;
@@ -191,14 +191,14 @@ p {
 }
 
 .btn-primary {
-  background-color: var(--color-primary);
-  color: var(--color-text-inverse);
-  border-color: var(--color-primary);
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  border-color: var(--color-accent);
 }
 
 .btn-primary:hover {
-  background-color: var(--color-primary-hover);
-  border-color: var(--color-primary-hover);
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
 }
 
 .btn-outline {
