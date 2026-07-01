@@ -5,7 +5,15 @@
   <div class="container footer-inner">
     <div class="footer-brand">
       <a href="/" class="logo" aria-label="Merlin Stavby">
-        <span class="logo-mark">M</span>
+        <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 600" aria-hidden="true" focusable="false">
+          <g fill="currentColor">
+            <path d="M 90 500 L 560 70 L 665 165 L 940 165 L 940 70 L 1045 70 L 1045 165 L 1220 165 L 1510 500 L 900 500 L 560 190 L 190 500 Z"/>
+            <rect x="445" y="365" width="82" height="68"/>
+            <rect x="575" y="365" width="82" height="68"/>
+            <rect x="445" y="465" width="82" height="68"/>
+            <rect x="575" y="465" width="82" height="68"/>
+          </g>
+        </svg>
         <span class="logo-text">Merlin <strong>Stavby</strong></span>
       </a>
       <p class="footer-tagline">Stavba a rekonstrukce, u které pořád víte, co se děje.</p>
@@ -88,18 +96,12 @@
   margin-bottom: 1rem;
 }
 
-.footer-brand .logo-mark {
-  background-color: rgba(255,255,255,0.15);
+.footer-brand .logo-icon {
+  height: 28px;
+  width: auto;
+  display: block;
   color: white;
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 1.125rem;
-  border-radius: var(--radius-sm);
+  flex-shrink: 0;
 }
 
 .footer-brand .logo-text {
