@@ -12,15 +12,13 @@ const services = [
   { number: '06', title: 'Pergoly a dlažby', text: 'Venkovní úpravy kolem domu, které mají být hotové čistě, pevně a bez dlouhého čekání.', href: '/sluzby/dilci-stavebni-cinnost' },
 ];
 
-const heroProof = ['20 let zkušeností', 'Moravskoslezský kraj', 'Fotky z postupu'];
-
 const homeGallery = [
-  { src: '/images/gallery-kuchyn-svetla.webp', alt: 'Světlá kuchyň po rekonstrukci' },
-  { src: '/images/gallery-kuchyn-bila.webp', alt: 'Bílá kuchyňská linka po dokončení' },
-  { src: '/images/gallery-koupelna-sprcha.webp', alt: 'Koupelna se sprchovým koutem' },
-  { src: '/images/gallery-koupelna-stresni.webp', alt: 'Rekonstrukce koupelny v podkroví' },
-  { src: '/images/gallery-chodba.webp', alt: 'Dokončená chodba v interiéru' },
-  { src: '/images/gallery-kuchyn-seda.webp', alt: 'Šedá kuchyň po rekonstrukci' },
+  { src: '/images/real-koupelna-mramor.jpg', alt: 'Koupelna s mramorovým obkladem' },
+  { src: '/images/real-kuchyn-bila.jpg', alt: 'Bílá kuchyňská linka' },
+  { src: '/images/real-kuchyn-led.jpg', alt: 'Kuchyně s LED osvětlením' },
+  { src: '/images/real-koupelna-tmava.jpg', alt: 'Moderní tmavá koupelna' },
+  { src: '/images/real-kuchyn-modra.jpg', alt: 'Kuchyně v šedé barvě' },
+  { src: '/images/real-chodba-bila.jpg', alt: 'Dokončená chodba' },
 ];
 ---
 
@@ -45,25 +43,35 @@ const homeGallery = [
           <a href="/kontakt" class="btn btn-primary">Poptat rekonstrukci</a>
           <a href="/sluzby" class="btn btn-outline">Prohlédnout služby</a>
         </div>
-        <div class="hero-proof" aria-label="Hlavní důvody důvěry">
-          <p>Opřené o</p>
-          <div class="hero-proof-list">
-            {heroProof.map((item) => (
-              <span>{item}</span>
-            ))}
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
+  <!-- ── TRUST BAR ─────────────────────────────────────── -->
+  <div class="trust-bar">
+    <div class="container">
+      <div class="trust-bar-inner">
+        <div class="trust-bar-item">
+          <span class="trust-bar-num">20+</span>
+          <span class="trust-bar-label">let zkušeností</span>
+        </div>
+        <div class="trust-bar-divider" aria-hidden="true"></div>
+        <div class="trust-bar-item">
+          <span class="trust-bar-num">MSK</span>
+          <span class="trust-bar-label">Moravskoslezský kraj</span>
+        </div>
+        <div class="trust-bar-divider" aria-hidden="true"></div>
+        <div class="trust-bar-item">
+          <span class="trust-bar-num">📷</span>
+          <span class="trust-bar-label">Fotky z postupu</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ── KDO JSME ──────────────────────────────────────── -->
   <section class="section section--large">
     <div class="container about-grid">
-      <div class="about-images">
-        <img src="/images/about-stavba.webp" alt="Tesařská práce u domu" class="site-photo about-img about-img--big" loading="lazy" decoding="async" />
-        <img src="/images/about-detail.webp" alt="Detail dokončené koupelny" class="site-photo about-img about-img--small" loading="lazy" decoding="async" />
-      </div>
       <div class="about-content">
         <h2>Kdo jsme</h2>
         <p>
@@ -73,19 +81,19 @@ const homeGallery = [
           Spolupracujeme jen s řemeslníky, které známe a kterým věříme, protože dobrá práce
           je vždycky o lidech.
         </p>
-        <div class="about-stats">
-          <div class="about-stat">
-            <span class="about-stat-num">20+</span>
-            <span class="about-stat-label">let praxe týmu</span>
-          </div>
-          <div class="about-stat">
-            <span class="about-stat-num">MSK</span>
-            <span class="about-stat-label">kraj působení</span>
-          </div>
-          <div class="about-stat">
-            <span class="about-stat-num">1</span>
-            <span class="about-stat-label">kontakt po celou dobu</span>
-          </div>
+      </div>
+      <div class="about-stats-vert">
+        <div class="about-stat-item">
+          <span class="about-stat-num">20+</span>
+          <span class="about-stat-label">let praxe týmu</span>
+        </div>
+        <div class="about-stat-item">
+          <span class="about-stat-num">MSK</span>
+          <span class="about-stat-label">kraj působení</span>
+        </div>
+        <div class="about-stat-item">
+          <span class="about-stat-num">1</span>
+          <span class="about-stat-label">kontakt po celou dobu</span>
         </div>
       </div>
     </div>
@@ -110,22 +118,20 @@ const homeGallery = [
             <div class="service-number">{service.number}</div>
             <h3>{service.title}</h3>
             <p>{service.text}</p>
-            <a href={service.href} class="service-link">Zjistit více
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
           </article>
         ))}
       </div>
 
+      <div class="services-cta">
+        <a href="/sluzby" class="btn btn-outline">Prohlédnout služby</a>
+      </div>
+
       <div class="mission-panel">
-        <img src="/images/service-novostavby.webp" alt="Dřevěná pergola a venkovní stavební práce" class="mission-image" loading="eager" decoding="async" />
         <div class="mission-card">
           <p class="section-kicker">Náš přístup</p>
           <h3>Držet <span>domluvu</span> a ukazovat postup práce.</h3>
           <p>Na stavbě nemá být chaos. Domluvíme rozsah, průběžně dokumentujeme postup a držíme jeden jasný kontakt po celou dobu.</p>
-          <a href="/kontakt" class="mission-link">Nezávazná poptávka
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
+          <a href="/kontakt" class="btn btn-outline">Nezávazná poptávka</a>
         </div>
       </div>
     </div>
@@ -142,8 +148,10 @@ const homeGallery = [
         </p>
       </div>
       <div class="gallery-grid">
-        {homeGallery.map((image) => (
-          <img src={image.src} alt={image.alt} class="site-photo gallery-thumb" loading="eager" decoding="async" />
+        {homeGallery.map((image, i) => (
+          <button class="gallery-thumb-btn" data-index={i} aria-label={`Zobrazit foto: ${image.alt}`}>
+            <img src={image.src} alt={image.alt} class="site-photo gallery-thumb" loading="eager" decoding="async" />
+          </button>
         ))}
       </div>
       <div class="gallery-cta">
@@ -152,59 +160,19 @@ const homeGallery = [
     </div>
   </section>
 
-  <!-- ── PROČ MERLIN ───────────────────────────────────── -->
-  <section class="section section--medium section--surface">
-    <div class="container">
-      <div class="section__header text-center">
-        <h2>Co tím získáte</h2>
-      </div>
-      <div class="benefits-grid">
-        <div class="benefit-card">
-          <div class="benefit-icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
-          </div>
-          <h3>Pořád víte, co se děje</h3>
-          <p>
-            Postup vám dokumentujeme. Žádné týdny ticha, kdy netušíte, jestli se vůbec něco děje.
-            Otevřete telefon a vidíte, jak stavba pokračuje.
-          </p>
-        </div>
-
-        <div class="benefit-card">
-          <div class="benefit-icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-          </div>
-          <h3>Dostanete to, co bylo domluvené</h3>
-          <p>
-            Stavíme podle projektu a podle něj volíme i materiál. Na čem se domluvíme na začátku,
-            to platí na konci. Bez překvapení na faktuře.
-          </p>
-        </div>
-
-        <div class="benefit-card">
-          <div class="benefit-icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <h3>Řemeslníky hlídáme my, ne vy</h3>
-          <p>
-            Spolupracujeme jen s lidmi, které známe a kterým věříme. Nemusíte chodit na stavbu
-            kontrolovat, jestli se pracuje. To je naše starost.
-          </p>
-        </div>
-
-        <div class="benefit-card">
-          <div class="benefit-icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
-          </div>
-          <h3>Předáním to nekončí</h3>
-          <p>
-            Když se po dokončení objeví cokoliv k doladění, ozvěte se. Nezmizíme ve chvíli,
-            kdy je zaplaceno.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- ── LIGHTBOX ──────────────────────────────────────── -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Galerie" hidden>
+    <button class="lightbox-close" id="lightbox-close" aria-label="Zavřít">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <button class="lightbox-arrow lightbox-prev" id="lightbox-prev" aria-label="Předchozí foto">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="" />
+    <button class="lightbox-arrow lightbox-next" id="lightbox-next" aria-label="Další foto">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+  </div>
 
   <!-- ── RECENZE TEASER ────────────────────────────────── -->
   <section class="section section--medium reviews-section">
@@ -257,12 +225,7 @@ const homeGallery = [
         </p>
         <div class="cta-actions">
           <a href="/kontakt" class="btn btn-primary cta-btn">Nezávazná poptávka</a>
-          <a href="tel:+420702810121" class="cta-phone">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.25h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.98-.98a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-            </svg>
-            702 810 121
-          </a>
+          <a href="/kontakt" class="btn btn-outline cta-btn">Kontaktovat</a>
         </div>
       </div>
     </div>
@@ -281,7 +244,7 @@ const homeGallery = [
   padding-block: 5rem;
   overflow: hidden;
   background-image:
-    linear-gradient(rgba(7, 20, 38, 0.42), rgba(7, 20, 38, 0.42)),
+    linear-gradient(rgba(7, 20, 38, 0.18), rgba(7, 20, 38, 0.22)),
     url('/images/hero-kitchen-background.webp');
   background-size: cover;
   background-position: center;
@@ -312,16 +275,16 @@ const homeGallery = [
   color: white;
   margin-bottom: 1.5rem;
   text-wrap: balance;
-  text-shadow: 0 12px 42px rgba(0, 0, 0, 0.28);
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.5);
 }
 
 .hero-sub {
   font-size: 1.125rem;
   line-height: 1.75;
-  color: rgba(255, 255, 255, 0.86);
+  color: rgba(255, 255, 255, 0.9);
   max-width: 62ch;
   margin: 0 auto 2.5rem;
-  text-shadow: 0 8px 32px rgba(0, 0, 0, 0.24);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.4);
 }
 
 .hero-ctas {
@@ -331,93 +294,65 @@ const homeGallery = [
   flex-wrap: wrap;
 }
 
-.hero .btn-primary {
-  background-color: var(--color-accent);
-  border-color: var(--color-accent);
-  color: white;
-}
-
-.hero .btn-primary:hover {
-  background-color: var(--color-accent-hover);
-  border-color: var(--color-accent-hover);
-}
-
 .hero .btn-outline {
   background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.34);
+  border-color: rgba(255, 255, 255, 0.5);
   color: white;
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }
 
 .hero .btn-outline:hover {
-  background-color: rgba(255, 255, 255, 0.18);
-  border-color: rgba(255, 255, 255, 0.48);
+  background-color: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.7);
 }
 
-.hero-proof {
-  margin-top: 2rem;
+/* ── Trust Bar ────────────────────────────────────────── */
+.trust-bar {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding-block: 1.25rem;
 }
 
-.hero-proof > p {
-  color: rgba(255, 255, 255, 0.66);
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: 0.8rem;
-}
-
-.hero-proof-list {
+.trust-bar-inner {
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 0.75rem;
+  gap: 2.5rem;
   flex-wrap: wrap;
 }
 
-.hero-proof-list span {
-  padding: 0.7rem 1rem;
-  color: white;
-  font-weight: 700;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 999px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+.trust-bar-item {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
 }
 
-.site-photo {
-  display: block;
-  width: 100%;
-  object-fit: cover;
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
+.trust-bar-num {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.trust-bar-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.trust-bar-divider {
+  width: 1px;
+  height: 1.5rem;
+  background-color: var(--color-border);
 }
 
 /* ── Kdo jsme ─────────────────────────────────────────── */
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 4rem;
-}
-
-.about-images {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.about-img {
-  border-radius: 18px;
-}
-
-.about-img--big {
-  aspect-ratio: 4/3;
-}
-
-.about-img--small {
-  aspect-ratio: 16/7;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: start;
+  gap: 5rem;
 }
 
 .about-content h2 {
@@ -428,23 +363,31 @@ const homeGallery = [
   line-height: 1.75;
 }
 
-.about-stats {
-  display: flex;
-  gap: 2.5rem;
-  margin-top: 2.5rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--color-border);
-}
-
-.about-stat {
+.about-stats-vert {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+}
+
+.about-stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 1.375rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.about-stat-item:first-child {
+  padding-top: 0;
+}
+
+.about-stat-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
 .about-stat-num {
   font-family: var(--font-heading);
-  font-size: 1.75rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--color-primary);
   line-height: 1;
@@ -455,7 +398,7 @@ const homeGallery = [
   color: var(--color-text-muted);
 }
 
-/* ── Služby grid podle reference ─────────────────────── */
+/* ── Služby grid ──────────────────────────────────────── */
 .services-section {
   background-color: var(--color-surface);
 }
@@ -486,9 +429,7 @@ const homeGallery = [
   color: var(--color-accent);
 }
 
-.section-link,
-.mission-link,
-.service-link {
+.section-link {
   display: inline-flex;
   align-items: center;
   gap: 0.375rem;
@@ -498,9 +439,7 @@ const homeGallery = [
   transition: gap var(--transition), color var(--transition);
 }
 
-.section-link:hover,
-.mission-link:hover,
-.service-link:hover {
+.section-link:hover {
   gap: 0.625rem;
   color: var(--color-accent);
 }
@@ -539,59 +478,22 @@ const homeGallery = [
   font-size: 0.875rem;
   line-height: 1.55;
   max-width: 28ch;
-  margin-bottom: 1rem;
 }
 
-.trust-row {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 3rem;
-  align-items: start;
-  margin-top: 6rem;
-}
-
-.trust-row > p {
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-}
-
-.trust-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-}
-
-.trust-pill {
-  min-height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.services-cta {
+  margin-top: 3.5rem;
   text-align: center;
-  padding: 1rem;
-  background-color: #fff;
-  border: 1px solid rgba(20, 33, 61, 0.07);
-  border-radius: 14px;
-  font-weight: 700;
-  color: var(--color-primary);
-  box-shadow: 0 12px 30px rgba(20, 33, 61, 0.04);
 }
 
 .mission-panel {
   position: relative;
-  margin-top: 6rem;
+  margin-top: 4rem;
   min-height: 430px;
   border-radius: 22px;
   overflow: hidden;
   background-image: linear-gradient(90deg, rgba(7,20,38,0.10), rgba(7,20,38,0.32)), url('/images/service-novostavby.webp');
   background-size: cover;
   background-position: center;
-}
-
-.mission-image {
-  display: none;
 }
 
 .mission-card {
@@ -623,14 +525,25 @@ const homeGallery = [
   gap: 1rem;
 }
 
-.gallery-thumb {
-  aspect-ratio: 4/3;
+.gallery-thumb-btn {
+  all: unset;
+  display: block;
+  cursor: pointer;
   border-radius: 18px;
+  overflow: hidden;
   transition: opacity var(--transition);
 }
 
-.gallery-thumb:hover {
-  opacity: 0.85;
+.gallery-thumb-btn:hover {
+  opacity: 0.88;
+}
+
+.gallery-thumb {
+  aspect-ratio: 4/3;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
 }
 
 .gallery-cta {
@@ -638,44 +551,74 @@ const homeGallery = [
   text-align: center;
 }
 
-/* ── Benefity ─────────────────────────────────────────── */
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
-  background-color: var(--color-border);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-}
-
-.benefit-card {
-  background-color: var(--color-surface);
-  padding: 2.5rem 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.benefit-icon {
+/* ── Lightbox ─────────────────────────────────────────── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: rgba(7, 20, 38, 0.95);
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2rem;
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: rgba(255,255,255,0.12);
+  border: none;
+  color: white;
   width: 44px;
   height: 44px;
-  background-color: var(--color-baby-blue);
-  border-radius: var(--radius-md);
-  color: var(--color-primary);
-  flex-shrink: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color var(--transition);
 }
 
-.benefit-card h3 {
-  font-size: 1.0625rem;
+.lightbox-close:hover {
+  background: rgba(255,255,255,0.22);
 }
 
-.benefit-card p {
-  font-size: 0.9375rem;
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.12);
+  border: none;
+  color: white;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color var(--transition);
 }
+
+.lightbox-arrow:hover {
+  background: rgba(255,255,255,0.22);
+}
+
+.lightbox-prev { left: 1.25rem; }
+.lightbox-next { right: 1.25rem; }
 
 /* ── Recenze carousel ─────────────────────────────────── */
 .reviews-carousel {
@@ -829,26 +772,12 @@ const homeGallery = [
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
 .cta-btn {
   padding: 0.875rem 2rem;
-}
-
-.cta-phone {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-weight: 600;
-  font-size: 1.0625rem;
-  color: var(--color-primary);
-  transition: color var(--transition);
-}
-
-.cta-phone:hover {
-  color: var(--color-accent);
 }
 
 /* ── Responsive ───────────────────────────────────────── */
@@ -857,12 +786,6 @@ const homeGallery = [
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem 2rem;
   }
-
-  .trust-row {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
 }
 
 @media (max-width: 900px) {
@@ -873,10 +796,6 @@ const homeGallery = [
 
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .benefits-grid {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -896,13 +815,11 @@ const homeGallery = [
     margin-bottom: 3rem;
   }
 
-  .services-grid,
-  .trust-grid {
+  .services-grid {
     grid-template-columns: 1fr;
   }
 
-  .mission-panel,
-  .mission-image {
+  .mission-panel {
     min-height: 560px;
   }
 
@@ -917,13 +834,78 @@ const homeGallery = [
     grid-template-columns: 1fr;
   }
 
-  .about-stats {
-    gap: 1.5rem;
+  .trust-bar-divider {
+    display: none;
   }
+
+  .trust-bar-inner {
+    gap: 1.25rem 2rem;
+  }
+
+  .lightbox-prev { left: 0.5rem; }
+  .lightbox-next { right: 0.5rem; }
 }
 </style>
 
 <script>
+  /* ── Galerie lightbox ──────────────────────────────────── */
+  (() => {
+    const images = [
+      { src: '/images/real-koupelna-mramor.jpg', alt: 'Koupelna s mramorovým obkladem' },
+      { src: '/images/real-kuchyn-bila.jpg', alt: 'Bílá kuchyňská linka' },
+      { src: '/images/real-kuchyn-led.jpg', alt: 'Kuchyně s LED osvětlením' },
+      { src: '/images/real-koupelna-tmava.jpg', alt: 'Moderní tmavá koupelna' },
+      { src: '/images/real-kuchyn-modra.jpg', alt: 'Kuchyně v šedé barvě' },
+      { src: '/images/real-chodba-bila.jpg', alt: 'Dokončená chodba' },
+    ];
+
+    const lb = document.getElementById('lightbox') as HTMLElement;
+    const lbImg = document.getElementById('lightbox-img') as HTMLImageElement;
+    const lbClose = document.getElementById('lightbox-close') as HTMLButtonElement;
+    const lbPrev = document.getElementById('lightbox-prev') as HTMLButtonElement;
+    const lbNext = document.getElementById('lightbox-next') as HTMLButtonElement;
+    if (!lb || !lbImg) return;
+
+    let current = 0;
+
+    const show = (i: number) => {
+      current = ((i % images.length) + images.length) % images.length;
+      lbImg.src = images[current].src;
+      lbImg.alt = images[current].alt;
+      lb.removeAttribute('hidden');
+      document.body.style.overflow = 'hidden';
+      lbClose.focus();
+    };
+
+    const close = () => {
+      lb.setAttribute('hidden', '');
+      document.body.style.overflow = '';
+    };
+
+    document.querySelectorAll<HTMLButtonElement>('.gallery-thumb-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const i = parseInt(btn.dataset.index ?? '0', 10);
+        show(i);
+      });
+    });
+
+    lbClose.addEventListener('click', close);
+    lbPrev.addEventListener('click', () => show(current - 1));
+    lbNext.addEventListener('click', () => show(current + 1));
+
+    lb.addEventListener('click', (e) => {
+      if (e.target === lb) close();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (lb.hasAttribute('hidden')) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowLeft') show(current - 1);
+      if (e.key === 'ArrowRight') show(current + 1);
+    });
+  })();
+
+  /* ── Reviews carousel ─────────────────────────────────── */
   (() => {
     const carousel = document.querySelector<HTMLElement>('.reviews-carousel');
     const track = carousel?.querySelector<HTMLElement>('.reviews-carousel__track');
@@ -947,71 +929,66 @@ const homeGallery = [
     recompute();
     window.addEventListener('load', recompute);
     window.addEventListener('resize', recompute);
-    if ('ResizeObserver' in window) new ResizeObserver(recompute).observe(track);
 
-    const norm = () => { if (half <= 0) return; x %= half; if (x < 0) x += half; };
-    const apply = () => { track.style.transform = `translate3d(${-x}px,0,0)`; };
-
-    const frame = (t: number) => {
-      const dt = Math.min(t - lastT, 50);
-      lastT = t;
-      if (!dragging) {
-        if (Math.abs(vel) > 0.003) {
-          x += vel * dt;
-          vel *= Math.pow(0.94, dt / 16);
-        } else {
-          vel = 0;
-          if (!reduce && !hover) x += AUTO * dt;
-        }
-      }
-      norm();
-      apply();
-      requestAnimationFrame(frame);
+    const wrap = () => {
+      if (x <= -half) x += half;
+      if (x > 0) x -= half;
     };
-    requestAnimationFrame((t) => { lastT = t; frame(t); });
 
-    carousel.addEventListener('mouseenter', () => { hover = true; });
-    carousel.addEventListener('mouseleave', () => { hover = false; });
-    carousel.addEventListener('dragstart', (e) => e.preventDefault());
+    const tick = (t: number) => {
+      const dt = Math.min(t - lastT, 64);
+      lastT = t;
+      if (!reduce) {
+        if (!hover && !dragging) vel = -AUTO;
+        if (!dragging) {
+          vel *= 0.88;
+          if (!hover) vel = vel * 0.88 + (-AUTO) * 0.12;
+        } else {
+          vel *= 0.92;
+        }
+        x += vel * dt;
+        wrap();
+        track.style.transform = `translateX(${x}px)`;
+      }
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+
+    carousel.addEventListener('mouseenter', () => hover = true);
+    carousel.addEventListener('mouseleave', () => hover = false);
 
     carousel.addEventListener('pointerdown', (e) => {
-      dragging = true;
-      vel = 0;
-      moved = 0;
+      if (pointerId !== null) return;
       pointerId = e.pointerId;
+      carousel.setPointerCapture(e.pointerId);
+      dragging = true;
       lastClientX = e.clientX;
-      lastMoveT = e.timeStamp;
+      lastMoveT = performance.now();
+      moved = 0;
+      vel = 0;
       carousel.classList.add('is-grabbing');
-      try { carousel.setPointerCapture(e.pointerId); } catch {}
     });
 
     carousel.addEventListener('pointermove', (e) => {
-      if (!dragging || e.pointerId !== pointerId) return;
+      if (e.pointerId !== pointerId) return;
       const dx = e.clientX - lastClientX;
-      const dt = e.timeStamp - lastMoveT || 16;
+      const dt = performance.now() - lastMoveT;
+      vel = dt > 0 ? dx / dt : 0;
+      x += dx;
+      wrap();
+      track.style.transform = `translateX(${x}px)`;
       lastClientX = e.clientX;
-      lastMoveT = e.timeStamp;
+      lastMoveT = performance.now();
       moved += Math.abs(dx);
-      x -= dx;
-      vel = vel * 0.7 + (-dx / dt) * 0.3;
-      norm();
-      apply();
-      if (moved > 8 && e.cancelable) e.preventDefault();
     });
 
-    const end = (e: PointerEvent) => {
-      if (!dragging || e.pointerId !== pointerId) return;
-      dragging = false;
+    const endDrag = (e: PointerEvent) => {
+      if (e.pointerId !== pointerId) return;
       pointerId = null;
-      vel = Math.max(-2.5, Math.min(2.5, vel));
+      dragging = false;
       carousel.classList.remove('is-grabbing');
-      try { carousel.releasePointerCapture(e.pointerId); } catch {}
     };
-    carousel.addEventListener('pointerup', end);
-    carousel.addEventListener('pointercancel', end);
-
-    carousel.addEventListener('click', (e) => {
-      if (moved > 8) { e.preventDefault(); e.stopPropagation(); }
-    }, true);
+    carousel.addEventListener('pointerup', endDrag);
+    carousel.addEventListener('pointercancel', endDrag);
   })();
 </script>
