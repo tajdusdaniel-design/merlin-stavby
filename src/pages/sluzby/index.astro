@@ -54,7 +54,6 @@ import Footer from '../../components/Footer.astro';
       <div class="service-visual">
         <img src="/images/service-novostavby-kuchyn.jpg" alt="Dokončená kuchyně v novostavbě" class="service-img" loading="eager" decoding="async" />
         <div class="service-note">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
           <p>Pro každého, kdo staví nový rodinný dům a nechce trávit večery koordinací zedníků, elektrikářů a podlahářů.</p>
         </div>
       </div>
@@ -67,7 +66,6 @@ import Footer from '../../components/Footer.astro';
       <div class="service-visual">
         <img src="/images/service-rekonstrukce-koupelna.jpg" alt="Zrekonstruovaná koupelna s dřevěnou podlahou" class="service-img" loading="lazy" decoding="async" />
         <div class="service-note">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
           <p>Pro majitele bytů a rodinných domů, kteří chtějí rekonstrukci s jedním kontaktem po celou dobu.</p>
         </div>
       </div>
@@ -128,7 +126,6 @@ import Footer from '../../components/Footer.astro';
       <div class="service-visual">
         <img src="/images/service-dilci-pergola.jpg" alt="Dřevěná pergola — dílčí stavební práce" class="service-img" loading="lazy" decoding="async" />
         <div class="service-note">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
           <p>Pro každého, kdo má kolem domu konkrétní věc k vyřešení a nechce kvůli ní zadávat velkou zakázku.</p>
         </div>
       </div>
@@ -146,42 +143,78 @@ import Footer from '../../components/Footer.astro';
       <div class="specs-grid">
         <div class="spec-card">
           <div class="spec-icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <!-- Základy: vrstvy půdy/betonu -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="15" width="20" height="4" rx="1"/>
+              <rect x="4" y="10" width="16" height="4" rx="1"/>
+              <rect x="7" y="5" width="10" height="4" rx="1"/>
+            </svg>
           </div>
           <h3>Základové desky</h3>
           <p>Příprava základů pro novostavby i přístavby. Přesná výšková úroveň, správná vyztužení a hydroizolace.</p>
         </div>
         <div class="spec-card">
           <div class="spec-icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <!-- Hrubá stavba: zdi + střecha -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 10.5L12 3l9 7.5"/>
+              <path d="M5 10v10h5v-5h4v5h5V10"/>
+            </svg>
           </div>
           <h3>Hrubá stavba</h3>
           <p>Zdění, stropy, věnce, překlady. Zděné i dřevostavby — stavíme podle projektu a v termínu.</p>
         </div>
         <div class="spec-card">
           <div class="spec-icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12M2 7l10-5 10 5-10 5-10-5z"/><path d="M7 9.5v5l5 2.5 5-2.5v-5"/></svg>
+            <!-- Dřevostavby: strom/dřevo -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22V13"/>
+              <path d="M6 13h12l-3-5h2L12 2 7 8h2l-3 5z"/>
+            </svg>
           </div>
           <h3>Dřevostavby</h3>
-          <p>Montovaný dřevěný skelet, OSB opláštění, parotěsná zábrany a zateplení. Rychlá výstavba s přesným harmonogramem.</p>
+          <p>Montovaný dřevěný skelet, OSB opláštění, parotěsné zábrany a zateplení. Rychlá výstavba s přesným harmonogramem.</p>
         </div>
         <div class="spec-card">
           <div class="spec-icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+            <!-- Sádrokartony: svislá příčka/panel -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="5" y="2" width="6" height="20" rx="1"/>
+              <rect x="13" y="2" width="6" height="20" rx="1"/>
+              <line x1="11" y1="7" x2="13" y2="7"/>
+              <line x1="11" y1="12" x2="13" y2="12"/>
+              <line x1="11" y1="17" x2="13" y2="17"/>
+            </svg>
           </div>
           <h3>Sádrokartonové práce</h3>
           <p>Příčky, podhledy, šachtové obklady. Přesné spáry, správná kotva, připraveno na všechny povrchy.</p>
         </div>
         <div class="spec-card">
           <div class="spec-icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M4 20V10l8-6 8 6v10"/></svg>
+            <!-- Podlahy: dlaždice/grid -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="9" height="9" rx="1"/>
+              <rect x="13" y="2" width="9" height="9" rx="1"/>
+              <rect x="2" y="13" width="9" height="9" rx="1"/>
+              <rect x="13" y="13" width="9" height="9" rx="1"/>
+            </svg>
           </div>
           <h3>Podlahářské práce</h3>
           <p>Příprava podkladu, potěry, lepení dlažby, pokládka plovoucích podlah. Výsledek, který drží a vypadá čistě.</p>
         </div>
         <div class="spec-card">
           <div class="spec-icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+            <!-- Pergola: horizontální trámy + sloupy -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="2" y1="7" x2="22" y2="7"/>
+              <line x1="5" y1="4" x2="5" y2="7"/>
+              <line x1="10" y1="4" x2="10" y2="7"/>
+              <line x1="14" y1="4" x2="14" y2="7"/>
+              <line x1="19" y1="4" x2="19" y2="7"/>
+              <line x1="5" y1="7" x2="5" y2="20"/>
+              <line x1="19" y1="7" x2="19" y2="20"/>
+              <line x1="5" y1="20" x2="19" y2="20"/>
+            </svg>
           </div>
           <h3>Pergoly a dlažby</h3>
           <p>Dřevěné i hliníkové pergoly, přístřešky na auta, zámková dlažba. Venkovní úpravy hotové čistě a pevně.</p>
@@ -307,23 +340,9 @@ import Footer from '../../components/Footer.astro';
 }
 
 .service-note {
-  display: flex;
-  gap: 0.625rem;
-  align-items: flex-start;
   padding: 1rem 1.25rem;
-  background-color: var(--color-surface);
-  border-left: 3px solid var(--color-accent);
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
-}
-
-.service-section--alt .service-note {
-  background-color: white;
-}
-
-.service-note svg {
-  color: var(--color-accent);
-  flex-shrink: 0;
-  margin-top: 1px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
 }
 
 .service-note p {
@@ -357,26 +376,24 @@ import Footer from '../../components/Footer.astro';
 .specs-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  border-top: 1px solid var(--color-border);
+  border-left: 1px solid var(--color-border);
 }
 
 .spec-card {
-  padding: 1.75rem;
-  background: white;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  padding: 2rem;
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color 200ms ease;
+}
+
+.spec-card:hover {
+  background-color: var(--color-surface);
 }
 
 .spec-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-md);
-  background-color: var(--color-baby-blue);
-  color: var(--color-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
+  color: var(--color-accent);
+  margin-bottom: 1.125rem;
 }
 
 .spec-card h3 {
@@ -393,27 +410,17 @@ import Footer from '../../components/Footer.astro';
 
 /* ── CTA ─────────────────────────────────────────────── */
 .cta-section-local {
-  background: var(--color-primary);
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
 }
 
 .cta-card {
   text-align: center;
-  color: white;
-}
-
-.cta-card .page-kicker,
-.cta-card h2 {
-  color: white;
 }
 
 .cta-card h2 {
   max-width: 720px;
-  margin: 0 auto 1.75rem;
-}
-
-.cta-card .btn-primary {
-  background-color: var(--color-accent);
-  border-color: var(--color-accent);
+  margin: 0.5rem auto 1.75rem;
 }
 
 /* ── Responsive ──────────────────────────────────────── */

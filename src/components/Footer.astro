@@ -49,9 +49,14 @@
       <p class="footer-legal">
         Merlin stavby s.r.o. &middot; Jiřího Herolda 1559/10, 700 30 Ostrava &middot; IČ 17133921
       </p>
-      <p class="footer-copy">
-        &copy; <span id="footer-year"></span> Merlin stavby s.r.o.
-      </p>
+      <div class="footer-copy-wrap">
+        <p class="footer-copy">
+          &copy; <span id="footer-year"></span> Merlin stavby s.r.o.
+        </p>
+        <p class="footer-credit">
+          Vytvořeno · <a href="https://danieltajdus.cz" target="_blank" rel="noopener">Daniel Tajduš</a>
+        </p>
+      </div>
     </div>
   </div>
 </footer>
@@ -166,6 +171,26 @@
 .footer-copy {
   font-size: 0.8125rem;
   color: rgba(255,255,255,0.45);
+}
+
+.footer-copy-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.footer-credit {
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.35);
+}
+
+.footer-credit a {
+  color: rgba(255,255,255,0.5);
+  transition: color var(--transition);
+}
+
+.footer-credit a:hover {
+  color: rgba(255,255,255,0.85);
 }
 
 @media (max-width: 900px) {

@@ -103,13 +103,8 @@ const homeGallery = [
   <section class="section section--large section--surface services-section">
     <div class="container">
       <div class="section-top">
-        <div>
-          <p class="section-kicker">Naše služby</p>
-          <h2>Co u nás <span>zařídíte</span></h2>
-        </div>
-        <a href="/sluzby" class="section-link">Prohlédnout služby
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+        <p class="section-kicker">Naše služby</p>
+        <h2>Co u nás <span>zařídíte</span></h2>
       </div>
 
       <div class="services-grid">
@@ -404,10 +399,7 @@ const homeGallery = [
 }
 
 .section-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 2rem;
+  text-align: center;
   margin-bottom: 4rem;
 }
 
@@ -418,10 +410,6 @@ const homeGallery = [
   text-transform: uppercase;
   color: var(--color-text-muted);
   margin-bottom: 0.75rem;
-}
-
-.section-top h2 {
-  max-width: 10ch;
 }
 
 .section-top h2 span,
