@@ -811,6 +811,16 @@ const homeGallery = [
   }
 }
 
+@media (max-width: 560px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-thumb {
+    aspect-ratio: 16/9;
+  }
+}
+
 @media (max-width: 600px) {
   .hero {
     min-height: 620px;
