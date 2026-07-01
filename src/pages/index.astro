@@ -2,6 +2,14 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+
+import imgKoupMramor from '../assets/images/real-koupelna-mramor.jpg';
+import imgKuchBila    from '../assets/images/real-kuchyn-bila.jpg';
+import imgKuchLed     from '../assets/images/real-kuchyn-led.jpg';
+import imgKoupTmava   from '../assets/images/real-koupelna-tmava.jpg';
+import imgKuchModra   from '../assets/images/real-kuchyn-modra.jpg';
+import imgChodba      from '../assets/images/real-chodba-bila.jpg';
 
 const services = [
   { number: '01', title: 'Novostavby', text: 'Dům na klíč, hrubá stavba, základová deska i navázání na rozpracovanou část. Koordinaci řešíme za vás.', href: '/sluzby/novostavby' },
@@ -13,12 +21,12 @@ const services = [
 ];
 
 const homeGallery = [
-  { src: '/images/real-koupelna-mramor.jpg', alt: 'Koupelna s mramorovým obkladem' },
-  { src: '/images/real-kuchyn-bila.jpg', alt: 'Bílá kuchyňská linka' },
-  { src: '/images/real-kuchyn-led.jpg', alt: 'Kuchyně s LED osvětlením' },
-  { src: '/images/real-koupelna-tmava.jpg', alt: 'Moderní tmavá koupelna' },
-  { src: '/images/real-kuchyn-modra.jpg', alt: 'Kuchyně v šedé barvě' },
-  { src: '/images/real-chodba-bila.jpg', alt: 'Dokončená chodba' },
+  { src: imgKoupMramor, alt: 'Koupelna s mramorovým obkladem' },
+  { src: imgKuchBila,   alt: 'Bílá kuchyňská linka' },
+  { src: imgKuchLed,    alt: 'Kuchyně s LED osvětlením' },
+  { src: imgKoupTmava,  alt: 'Moderní tmavá koupelna' },
+  { src: imgKuchModra,  alt: 'Kuchyně v šedé barvě' },
+  { src: imgChodba,     alt: 'Dokončená chodba' },
 ];
 ---
 
@@ -145,7 +153,7 @@ const homeGallery = [
       <div class="gallery-grid">
         {homeGallery.map((image, i) => (
           <button class="gallery-thumb-btn" data-index={i} aria-label={`Zobrazit foto: ${image.alt}`}>
-            <img src={image.src} alt={image.alt} class="site-photo gallery-thumb" loading="eager" decoding="async" />
+            <Image src={image.src} alt={image.alt} class="site-photo gallery-thumb" width={600} format="webp" quality={75} loading="eager" decoding="async" />
           </button>
         ))}
       </div>

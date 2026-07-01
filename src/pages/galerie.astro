@@ -2,20 +2,34 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+
+import imgKuchyn1   from '../assets/images/service-novostavby-kuchyn.jpg';
+import imgKuchyn2   from '../assets/images/real-kuchyn-bila.jpg';
+import imgKuchyn3   from '../assets/images/real-kuchyn-led.jpg';
+import imgKuchyn4   from '../assets/images/real-kuchyn-modra.jpg';
+import imgKoup1     from '../assets/images/real-koupelna-mramor.jpg';
+import imgKoup2     from '../assets/images/real-koupelna-tmava.jpg';
+import imgKoup3     from '../assets/images/real-koupelna-zrcadlo.jpg';
+import imgKoup4     from '../assets/images/service-rekonstrukce-koupelna.jpg';
+import imgChodba1   from '../assets/images/real-chodba-bila.jpg';
+import imgChodba2   from '../assets/images/real-chodba-drevo.jpg';
+import imgPergola1  from '../assets/images/service-dilci-pergola.jpg';
+import imgPergola2  from '../assets/images/real-carport-hory.jpg';
 
 const photos = [
-  { src: '/images/service-novostavby-kuchyn.jpg',    alt: 'Kuchyňská linka v novostavbě',         cat: 'kuchyne' },
-  { src: '/images/real-kuchyn-bila.jpg',              alt: 'Bílá kuchyňská linka',                 cat: 'kuchyne' },
-  { src: '/images/real-kuchyn-led.jpg',               alt: 'Kuchyně s LED osvětlením',              cat: 'kuchyne' },
-  { src: '/images/real-kuchyn-modra.jpg',             alt: 'Kuchyně v tmavě šedé',                 cat: 'kuchyne' },
-  { src: '/images/real-koupelna-mramor.jpg',          alt: 'Koupelna s mramorovým obkladem',        cat: 'koupelna' },
-  { src: '/images/real-koupelna-tmava.jpg',           alt: 'Moderní tmavá koupelna',                cat: 'koupelna' },
-  { src: '/images/real-koupelna-zrcadlo.jpg',         alt: 'Koupelna se zrcadlem',                  cat: 'koupelna' },
-  { src: '/images/service-rekonstrukce-koupelna.jpg', alt: 'Rekonstruovaná koupelna',               cat: 'koupelna' },
-  { src: '/images/real-chodba-bila.jpg',              alt: 'Bílá chodba po rekonstrukci',           cat: 'chodby' },
-  { src: '/images/real-chodba-drevo.jpg',             alt: 'Chodba s dřevěnými prvky',              cat: 'chodby' },
-  { src: '/images/service-dilci-pergola.jpg',         alt: 'Dřevěná pergola na míru',               cat: 'pergoly' },
-  { src: '/images/real-carport-hory.jpg',             alt: 'Carport s výhledem na hory',            cat: 'pergoly' },
+  { src: imgKuchyn1,  alt: 'Kuchyňská linka v novostavbě',        cat: 'kuchyne' },
+  { src: imgKuchyn2,  alt: 'Bílá kuchyňská linka',                cat: 'kuchyne' },
+  { src: imgKuchyn3,  alt: 'Kuchyně s LED osvětlením',             cat: 'kuchyne' },
+  { src: imgKuchyn4,  alt: 'Kuchyně v tmavě šedé',                cat: 'kuchyne' },
+  { src: imgKoup1,    alt: 'Koupelna s mramorovým obkladem',       cat: 'koupelna' },
+  { src: imgKoup2,    alt: 'Moderní tmavá koupelna',               cat: 'koupelna' },
+  { src: imgKoup3,    alt: 'Koupelna se zrcadlem',                 cat: 'koupelna' },
+  { src: imgKoup4,    alt: 'Rekonstruovaná koupelna',              cat: 'koupelna' },
+  { src: imgChodba1,  alt: 'Bílá chodba po rekonstrukci',          cat: 'chodby' },
+  { src: imgChodba2,  alt: 'Chodba s dřevěnými prvky',             cat: 'chodby' },
+  { src: imgPergola1, alt: 'Dřevěná pergola na míru',              cat: 'pergoly' },
+  { src: imgPergola2, alt: 'Carport s výhledem na hory',           cat: 'pergoly' },
 ];
 
 const filters = [
@@ -74,9 +88,12 @@ const filters = [
             data-index={i}
             aria-label={`Zobrazit: ${photo.alt}`}
           >
-            <img
+            <Image
               src={photo.src}
               alt={photo.alt}
+              width={600}
+              format="webp"
+              quality={75}
               loading={i < 6 ? 'eager' : 'lazy'}
               decoding="async"
             />
@@ -279,21 +296,6 @@ const filters = [
 
 <script>
   (() => {
-    const photos = [
-      { src: '/images/service-novostavby-kuchyn.jpg',    alt: 'Kuchyňská linka v novostavbě',    cat: 'kuchyne' },
-      { src: '/images/real-kuchyn-bila.jpg',              alt: 'Bílá kuchyňská linka',            cat: 'kuchyne' },
-      { src: '/images/real-kuchyn-led.jpg',               alt: 'Kuchyně s LED osvětlením',         cat: 'kuchyne' },
-      { src: '/images/real-kuchyn-modra.jpg',             alt: 'Kuchyně v tmavě šedé',            cat: 'kuchyne' },
-      { src: '/images/real-koupelna-mramor.jpg',          alt: 'Koupelna s mramorovým obkladem',  cat: 'koupelna' },
-      { src: '/images/real-koupelna-tmava.jpg',           alt: 'Moderní tmavá koupelna',           cat: 'koupelna' },
-      { src: '/images/real-koupelna-zrcadlo.jpg',         alt: 'Koupelna se zrcadlem',             cat: 'koupelna' },
-      { src: '/images/service-rekonstrukce-koupelna.jpg', alt: 'Rekonstruovaná koupelna',         cat: 'koupelna' },
-      { src: '/images/real-chodba-bila.jpg',              alt: 'Bílá chodba po rekonstrukci',     cat: 'chodby' },
-      { src: '/images/real-chodba-drevo.jpg',             alt: 'Chodba s dřevěnými prvky',        cat: 'chodby' },
-      { src: '/images/service-dilci-pergola.jpg',         alt: 'Dřevěná pergola na míru',          cat: 'pergoly' },
-      { src: '/images/real-carport-hory.jpg',             alt: 'Carport s výhledem na hory',      cat: 'pergoly' },
-    ];
-
     const lb        = document.getElementById('lightbox') as HTMLElement;
     const lbImg     = document.getElementById('lightbox-img') as HTMLImageElement;
     const lbClose   = document.getElementById('lightbox-close') as HTMLButtonElement;
@@ -303,15 +305,22 @@ const filters = [
     const filterBtns = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
     const items      = document.querySelectorAll<HTMLButtonElement>('.gallery-item');
 
-    let visibleIndices: number[] = photos.map((_, i) => i);
+    /* src/alt čteme přímo z vyrenderovaného <img> — optimalizovaný WebP URL */
+    const getPhoto = (btn: HTMLButtonElement) => {
+      const img = btn.querySelector('img')!;
+      return { src: img.src, alt: img.alt };
+    };
+
+    let visibleItems: HTMLButtonElement[] = Array.from(items);
     let current = 0;
 
     /* ── Lightbox ── */
-    const openLightbox = (photoIdx: number) => {
-      const pos = visibleIndices.indexOf(photoIdx);
-      current = pos >= 0 ? pos : 0;
-      lbImg.src = photos[visibleIndices[current]].src;
-      lbImg.alt = photos[visibleIndices[current]].alt;
+    const openLightbox = (btn: HTMLButtonElement) => {
+      current = visibleItems.indexOf(btn);
+      if (current < 0) current = 0;
+      const { src, alt } = getPhoto(visibleItems[current]);
+      lbImg.src = src;
+      lbImg.alt = alt;
       lb.removeAttribute('hidden');
       document.body.style.overflow = 'hidden';
     };
@@ -322,14 +331,15 @@ const filters = [
     };
 
     const navigate = (dir: number) => {
-      if (!visibleIndices.length) return;
-      current = ((current + dir) % visibleIndices.length + visibleIndices.length) % visibleIndices.length;
-      lbImg.src = photos[visibleIndices[current]].src;
-      lbImg.alt = photos[visibleIndices[current]].alt;
+      if (!visibleItems.length) return;
+      current = ((current + dir) % visibleItems.length + visibleItems.length) % visibleItems.length;
+      const { src, alt } = getPhoto(visibleItems[current]);
+      lbImg.src = src;
+      lbImg.alt = alt;
     };
 
     items.forEach((btn) => {
-      btn.addEventListener('click', () => openLightbox(parseInt(btn.dataset.index ?? '0', 10)));
+      btn.addEventListener('click', () => openLightbox(btn));
     });
 
     lbClose.addEventListener('click', closeLightbox);
@@ -348,7 +358,7 @@ const filters = [
     const EASING = 'cubic-bezier(0.23, 1, 0.32, 1)';
 
     const applyFilter = (filter: string) => {
-      visibleIndices = [];
+      visibleItems = [];
       let stagger = 0;
 
       items.forEach((item) => {
@@ -359,9 +369,8 @@ const filters = [
           item.hidden = true;
         } else {
           item.hidden = false;
-          visibleIndices.push(parseInt(item.dataset.index ?? '0', 10));
+          visibleItems.push(item);
 
-          /* WAAPI: každá viditelná fotka se postupně zjeví */
           item.animate(
             [
               { opacity: '0', transform: 'translateY(10px)' },
@@ -378,7 +387,7 @@ const filters = [
         }
       });
 
-      emptyMsg.hidden = visibleIndices.length > 0;
+      emptyMsg.hidden = visibleItems.length > 0;
     };
 
     filterBtns.forEach((btn) => {
