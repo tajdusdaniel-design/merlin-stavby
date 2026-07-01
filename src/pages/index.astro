@@ -153,7 +153,7 @@ const homeGallery = [
       <div class="gallery-grid">
         {homeGallery.map((image, i) => (
           <button class="gallery-thumb-btn" data-index={i} aria-label={`Zobrazit foto: ${image.alt}`}>
-            <Image src={image.src} alt={image.alt} class="site-photo gallery-thumb" width={600} format="webp" quality={75} loading="eager" decoding="async" />
+            <Image src={image.src} alt={image.alt} class="site-photo gallery-thumb" width={600} height={800} format="webp" quality={75} loading="eager" decoding="async" />
           </button>
         ))}
       </div>
