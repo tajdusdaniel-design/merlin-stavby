@@ -53,20 +53,12 @@ const reviews = [
     </div>
   </section>
 
-  <section class="section section--compact proof-strip">
-    <div class="container proof-strip-inner">
-      <span>20 let zkušeností</span>
-      <span>Moravskoslezský kraj</span>
-      <span>Fotky z postupu</span>
-    </div>
-  </section>
-
   <Footer slot="footer" />
 </Layout>
 
 <style>
 .reviews-section {
-  background: linear-gradient(180deg, var(--color-surface) 0%, #fff 100%);
+  background-color: var(--color-bg);
 }
 
 .testimonials-grid {
@@ -78,27 +70,27 @@ const reviews = [
 .testimonial-card {
   background-color: var(--color-testimonial-bg);
   color: var(--color-testimonial-text);
-  border-radius: 18px;
-  padding: 2.25rem 2rem;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  min-height: 340px;
+  min-height: 300px;
 }
 
 .testimonial-quote {
   font-family: var(--font-heading);
   font-size: 3rem;
   font-weight: 700;
-  color: var(--color-accent);
+  color: var(--color-baby-blue);
   line-height: 1;
-  opacity: 0.9;
+  opacity: 0.6;
 }
 
 .testimonial-text {
-  color: rgba(255,255,255,0.86);
-  font-size: 0.95rem;
-  line-height: 1.7;
+  color: rgba(255,255,255,0.85);
+  font-size: 0.9375rem;
+  line-height: 1.65;
   flex: 1;
 }
 
@@ -111,55 +103,32 @@ const reviews = [
 }
 
 .testimonial-avatar {
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background-color: rgba(30,157,224,0.22);
+  background-color: rgba(255,255,255,0.15);
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 600;
   flex-shrink: 0;
 }
 
 .testimonial-name {
-  font-weight: 700;
-  font-size: 0.95rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
   color: white;
 }
 
 .testimonial-role {
-  font-size: 0.82rem;
-  color: rgba(255,255,255,0.58);
-}
-
-.proof-strip {
-  background-color: var(--color-primary);
-}
-
-.proof-strip-inner {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-}
-
-.proof-strip span {
-  min-height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: 700;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 14px;
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.55);
 }
 
 @media (max-width: 900px) {
-  .testimonials-grid,
-  .proof-strip-inner {
+  .testimonials-grid {
     grid-template-columns: 1fr;
   }
 }
